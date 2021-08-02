@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/md-mod.css">
+    <style>
+        .contenedor {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0;
+            padding-bottom: 80px;
+        }
+
+        .btn-volver {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+        }
+
+        .btn-volver a {
+            margin: 0;
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            padding: 8px 10px;
+            background-color: rgb(42, 116, 255);
+            border-radius: 50%;
+            color: #FFFFFF;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .btn-volver a:hover {
+            background-color: rgb(8, 79, 211);
+        }
+    </style>
+    <link rel="stylesheet" href="../css/hl/default.min.css">
+    <link rel="stylesheet" href="../css/hl/atom-one-dark.css">
+
+</head>
+
+<body>
+    <div class="btn-volver">
+        <a href="javascript: history.go(-1)">
+            <svg width="32" height="32" fill="currentColor" class="bi" viewBox="0 0 16 14">
+                <path fill-rule="evenodd"
+                    d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+            </svg>
+        </a>
+    </div>
+    <article class="markdown-body contenedor">
+        {{{ markdown }}}
+    </article>
+    <script src="../js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script>
+        let titulo = document.getElementsByTagName("h1");
+        console.log(titulo[0].innerText);
+        document.title = titulo[0].innerText;
+    </script>
+</body>
+
+</html>
