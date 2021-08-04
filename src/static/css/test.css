@@ -1,0 +1,174 @@
+:root {
+    --main-bg-color: #0D1117;
+    --bg-header-color: #161B22;
+    --bg-header-shadow: #0D1117;
+    --main-text-color: #b3b9c5;
+    --color-link: #6AB0F3;
+    --color-link-hover: #FFFFFF;
+    --color-title:#FFFFFF;
+  }
+
+body{
+    background: var(--main-bg-color);
+    color: var(--main-text-color);
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: "Roboto", monospace;
+    box-sizing: border-box;
+}
+
+h1{
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-family: "DM Sans-Bolt", monospace;
+    font-size: 37px;
+    color: var( --color-title)
+}
+
+p{
+    margin-bottom: 1.5rem;
+    font-size: 19px;/*1.25*/
+    line-height: 1.6rem;
+    font-weight: 100;
+    word-spacing: 0.25em;
+    /* text-align: justify; */
+}
+
+a{
+    color: var(--color-link);
+    text-decoration:none;
+}
+
+a:hover{
+    color: var(--color-link-hover);
+    /* text-decoration: underline; */
+    border-bottom: 3px solid var(--color-link);
+}
+
+main{
+    width: 70%;
+}
+
+aside{
+    width: 30%;
+    margin-left: 2rem;
+}
+
+header{
+    background: var(--bg-header-color);
+    box-shadow: 0px 3px 3px var(--bg-header-shadow);
+    color: #FFFFFF;
+    position: fixed;
+    width: 100%;
+}
+
+nav ul {
+    direction: rtl;
+}
+
+nav ul li{
+    display: inline;
+}
+
+nav ul li a{
+    background:var(--main-bg-color);/*#2D2D31*/
+    padding: 10px 20px;
+    color:#FFFFFF;
+    font-size: 19px;
+}
+
+.icon-nav-link{
+    padding: 10px 15px;
+}
+
+.main{
+    display: flex;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1{
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    text-transform: Capitalize;
+}
+
+.header nav{
+    font-size: 1.5rem;
+}
+
+.header img{
+    margin-right: 10px;
+}
+
+.container{
+    max-width: 960px;
+    margin: auto;
+    padding: 1rem;
+}
+
+.contenido{
+    padding-top: 90px;
+}
+
+.d-none{
+    display: none;
+}
+
+.d-flex{
+    display: flex;
+}
+
+.flex-align-items-center{
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+/*Media qrys*/
+
+/*<850px*/
+@media screen and (min-width: 700px) { 
+    .categoria-nav{
+        display: none;
+    }
+}
+
+/*<850px*/
+@media screen and (max-width: 800px) { 
+    p{
+        font-size:18px;
+    }
+
+    h1{
+        font-size:2.1rem;
+    }
+}
+
+/*<700px*/
+@media screen and (max-width: 700px) { 
+    aside{
+        display:none;
+    }
+
+    main{
+        width:100%;
+    }
+
+    p{
+        font-size:17px;
+    }
+
+    h1{
+        font-size:1.6rem;
+    }
+
+    .text-logo{
+        display:none;
+    }
+}

@@ -1,7 +1,7 @@
 // export const {function name} = () =>{}
 const fs = require('fs')
 const path = require('path')
-module.exports = index = (req, res) => {
+const index = (req, res) => {
 
     const data = fs.readdirSync(path.join(__dirname, "..", "docs-md"), function (err, archivos) {
         if (err) {
@@ -22,3 +22,14 @@ module.exports = index = (req, res) => {
 
 
 };
+
+const test = (req, res) => {
+
+    res.json("Ok adis");
+
+};
+
+module.exports = {
+    index,
+    test
+}
