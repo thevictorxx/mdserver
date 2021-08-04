@@ -88,3 +88,10 @@
     font-weight: normal;
     src: url(../fonts/DM-Sans/DMSans-Bold.ttf);
 }
+
+@font-face {
+    font-family: 'Kalam';
+    font-style: normal;
+    font-weight: normal;
+    src: url(../fonts/Kalam/Kalam-Regular.ttf);
+}
