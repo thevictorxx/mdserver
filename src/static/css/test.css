@@ -18,6 +18,7 @@
     --color-azul-dark: #296fa8;
     --color-rojo-dark: #cc0f35;
     --color-amarillo-dark: #ffc629;
+    --color-verde-dark: #196341;
 
     --color-gris-dark:#20252B;
   }
@@ -204,7 +205,9 @@ a.btn{
     border: 2px solid var(--color-gris-dark);
     box-shadow: 4px 4px 0px var(--color-gris-dark);
     margin-right:10px;
-    transition:border 0.1s ease, box-shadow 0.1s ease;
+    transition:border 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+    display: inline-block;
+    margin-bottom:3px;
 }
 a.btn:hover{
     border: 2px solid var(--boder-color-hover);
@@ -222,6 +225,12 @@ a.btn.rojo:hover{
     box-shadow: 4px 4px 0px var(--color-rojo-dark);
     color: var(--color-rojo-dark);
 }
+a.btn.rojo:active{
+    border: 2px solid var(--color-rojo-dark);
+    box-shadow: 4px 4px 0px var(--color-rojo-dark);
+    color: #FFF;
+    background: var(--color-rojo);
+}
 
 a.btn.amarillo{
     border: 2px solid var(--color-amarillo);
@@ -233,6 +242,12 @@ a.btn.amarillo:hover{
     box-shadow: 4px 4px 0px var(--color-amarillo-dark);
     color: var(--color-amarillo-dark);
 }
+a.btn.amarillo:active{
+    border: 2px solid var(--color-amarillo-dark);
+    box-shadow: 4px 4px 0px var(--color-amarillo-dark);
+    color: var(--main-bg-color);
+    background: var(--color-amarillo);
+}
 
 a.btn.azul{
     border: 2px solid var(--color-azul);
@@ -243,6 +258,33 @@ a.btn.azul:hover{
     border: 2px solid var(--color-azul-dark);
     box-shadow: 4px 4px 0px var(--color-azul-dark);
     color: var(--color-azul-dark);
+}
+a.btn.azul:active{
+    border: 2px solid var(--color-azul-dark);
+    box-shadow: 4px 4px 0px var(--color-azul-dark);
+    color: #FFF;
+    background: var(--color-azul);
+}
+
+a.btn.verde{
+    border: 2px solid var(--color-verde);
+    box-shadow: 4px 4px 0px var(--color-verde);
+    color: var(--color-verde);
+}
+a.btn.verde:hover{
+    border: 2px solid var(--color-verde-dark);
+    box-shadow: 4px 4px 0px var(--color-verde-dark);
+    color: var(--color-verde-dark);
+}
+a.btn.verde:active{
+    border: 2px solid var(--color-verde-dark);
+    box-shadow: 4px 4px 0px var(--color-verde-dark);
+    color: #FFF;
+    background: var(--color-verde);
+}
+
+.text-blanco{
+    color: var(--main-text-color) !important;
 }
 
 /*Media qrys*/
