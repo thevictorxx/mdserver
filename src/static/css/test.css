@@ -210,9 +210,15 @@ a.btn{
     margin-bottom:3px;
 }
 a.btn:hover{
-    border: 2px solid var(--boder-color-hover);
-    box-shadow: 4px 4px 0px var(--boder-color-hover);
+    border: 2px solid var(--main-text-color);
+    box-shadow: 4px 4px 0px var(--main-text-color);
     color:#FFFFFF;
+}
+a.btn:active{
+    border: 2px solid var(--main-text-color);
+    box-shadow: 4px 4px 0px var(--main-text-color);
+    color: #FFF;
+    background: var(--color-gris-dark);
 }
 
 a.btn.rojo{
