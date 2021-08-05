@@ -14,11 +14,13 @@
     --color-rojo:#f14668;
     --color-gris:#b3b9c5; /*--main-text-color == --color-gris*/
     --color-azul:#3e8ed0;
+    --color-lavanda: #9b6dff;
 
     --color-azul-dark: #296fa8;
     --color-rojo-dark: #cc0f35;
     --color-amarillo-dark: #ffc629;
     --color-verde-dark: #196341;
+    --color-lavanda-dark: #793dfc;
 
     --color-gris-dark:#20252B;
   }
@@ -289,8 +291,63 @@ a.btn.verde:active{
     background: var(--color-verde);
 }
 
+a.btn.lavanda{
+    border: 2px solid var(--color-lavanda);
+    box-shadow: 4px 4px 0px var(--color-lavanda);
+    color: var(--color-lavanda);
+}
+a.btn.lavanda:hover{
+    border: 2px solid var(--color-lavanda-dark);
+    box-shadow: 4px 4px 0px var(--color-lavanda-dark);
+    color: var(--color-lavanda-dark);
+}
+a.btn.lavanda:active{
+    border: 2px solid var(--color-lavanda-dark);
+    box-shadow: 4px 4px 0px var(--color-lavanda-dark);
+    color: #FFF;
+    background: var(--color-lavanda);
+}
+
+
+/* CARDS - CARD */
+
+
+/* COLOR DE TEXTOS */
 .text-blanco{
-    color: var(--main-text-color) !important;
+    color: #FFFFFF !important;
+}
+
+.text-rojo{
+    color: var(--color-rojo) !important;
+}
+
+.text-rojo-dark{
+    color: var(--color-rojo-dark) !important;
+}
+
+.text-verde{
+    color: var(--color-verde) !important;
+}
+
+.text-verde-dark{
+    color: var(--color-verde-dark) !important;
+}
+
+.text-amarillo{
+    color: var(--color-amarillo) !important;
+}
+
+.text-amarillo-dark{
+    color: var(--color-amarillo-dark) !important;
+}
+
+.text-lavanda{
+    color: var(--color-lavanda) !important;
+}
+
+/* MARGENES */
+.mb-1{
+    margin-bottom:10px;
 }
 
 /*Media qrys*/
