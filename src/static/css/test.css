@@ -7,8 +7,18 @@
     --color-link-hover: #FFFFFF;
     --color-title:#FFFFFF;
     --boder-color:#23282ed7;
-    --boder-color-hover: #198754;/*FFD479  #198754*/
+    --boder-color-hover: #198754;
+
     --color-amarillo: #FFD479;
+    --color-verde:#198754;
+    --color-rojo:#f14668;
+    --color-gris:#b3b9c5; /*--main-text-color == --color-gris*/
+    --color-azul:#3e8ed0;
+
+    --color-azul-dark: #296fa8;
+    --color-rojo-dark: #cc0f35;
+
+    --color-gris-dark:#20252B;
   }
 
 body{
@@ -184,7 +194,22 @@ header nav ul li a{
     padding-top: 10px;
 }
 
+/* BOTONES LINKS */
 
+.btn{
+    text-decoration: none;
+    padding: 10px 20px;
+    color: var(--main-text-color);
+    border: 2px solid var(--color-gris-dark);
+    box-shadow: 4px 4px 0px var(--color-gris-dark);
+    margin-right:10px;
+    transition:border 0.1s ease, box-shadow 0.1s ease;
+}
+.btn:hover{
+    border: 2px solid var(--boder-color-hover);
+    box-shadow: 4px 4px 0px var(--boder-color-hover);
+    color:#FFFFFF;
+}
 
 
 /*Media qrys*/
