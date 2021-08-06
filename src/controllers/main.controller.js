@@ -25,7 +25,22 @@ const index = (req, res) => {
 
 const test = (req, res) => {
 
-    res.json("Ok adis");
+    const data = fs.readdirSync(path.join(__dirname, "..", "docs-md"), function (err, archivos) {
+        if (err) {
+            onError(err);
+            return;
+        }
+        console.log(archivos);
+        return archivos;
+    });
+
+    const elementos = data.filter(element => element.includes(".md"));
+
+    res.render('test', {
+        title: "Pagina Principal",
+        condition: true,
+        archivos: elementos
+    });
 
 };
 
