@@ -7,7 +7,7 @@ const mainRoutes = require('./routes/main.routes')
 
 const app = express();
 
-app.use(helmet());
+// app.use(helmet());
 
 let mdRouter = expressMd({
     dir: __dirname + '/docs-md',
