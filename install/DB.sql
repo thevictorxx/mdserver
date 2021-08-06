@@ -4,7 +4,8 @@ CREATE TABLE account(
     name VARCHAR(50) NOT NULL,
     lastname VARCHAR(50) NOT NULL,
     pass text NOT NULL,
-    mail VARCHAR(50) NULL
+    mail VARCHAR(50) NULL,
+    access int NOT NULL
 );
 
 CREATE TABLE file(
@@ -24,12 +25,22 @@ CREATE TABLE category(
     img VARCHAR(100) NOT NULL
 );
 
+CREATE TABLE access(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    access VARCHAR(25) NOT NULL
+);
+
 ALTER TABLE file
 ADD CONSTRAINT FK_File_Account
 FOREIGN KEY (autor) 
 REFERENCES account (id);
 
 ALTER TABLE file
-ADD CONSTRAINT FK_File_Categoru
+ADD CONSTRAINT FK_File_Category
 FOREIGN KEY (category) 
 REFERENCES category (id);
+
+ALTER TABLE account
+ADD CONSTRAINT FK_Account_Access
+FOREIGN KEY (access) 
+REFERENCES access (id);
