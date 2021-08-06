@@ -203,8 +203,9 @@ header nav ul li a {
   position: absolute;
   background: var(--bg-header-color);
   width: 100%;
-  text-align: center;
-  padding: 15px;
+  padding: 15px 0px;
+  top:-80px;
+  transition: top 0.3s ease;
 }
 
 .buscar .buscar-formulario {
@@ -221,12 +222,21 @@ header nav ul li a {
   cursor: pointer;
 }
 
-.buscar input {
-  height: 35px;
+.buscar input[type=text] {
+  height: 43px;
   margin-right: 10px;
-  width:40%;
+  width:500px;
+  max-width:50%;
   font-family: "Roboto", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+  border:1px solid var(--boder-color);
+  transition: all 0.5s ease;
+  padding:0 10px;
+}
+.buscar input[type=text]:focus {
+  outline: 0;
+  box-shadow: 0 0 5px 1px rgba(155, 155, 155, 0.658);
 }
 
 /* BOTONES LINKS */
@@ -240,7 +250,6 @@ a.btn {
   margin-right: 10px;
   transition: border 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
   display: inline-block;
-  margin-bottom: 3px;
 }
 a.btn:hover {
   border: 2px solid var(--main-text-color);
@@ -419,6 +428,10 @@ a.btn.lavanda:active {
 }
 
 /* MARGENES */
+.mb-0 {
+  margin-bottom: 0px !important;
+}
+
 .mb-10 {
   margin-bottom: 10px !important;
 }
