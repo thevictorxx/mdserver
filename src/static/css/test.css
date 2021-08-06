@@ -18,7 +18,7 @@
 
     --color-azul-dark: #296fa8;
     --color-rojo-dark: #cc0f35;
-    --color-amarillo-dark: #ffc629;
+    --color-amarillo-dark: #ffd04e;
     --color-verde-dark: #196341;
     --color-lavanda-dark: #793dfc;
 
@@ -125,6 +125,7 @@ header{
     color: #FFFFFF;
     position: fixed;
     width: 100%;
+    z-index: 100;
 }
 
 header nav ul {
@@ -310,7 +311,50 @@ a.btn.lavanda:active{
 
 
 /* CARDS - CARD */
+.card{
+    position:relative;
+    border: 2px solid var(--color-gris-dark);
+    border-radius:5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
 
+.card .card-title{
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card .card-title a{
+    color:var(--color-amarillo)
+}
+
+.card .card-title a:hover{
+    color:var(--color-amarillo-dark);
+    border:none;
+}
+
+.card .card-body p{
+    margin-bottom:10px
+}
+
+.card .card-footer{
+    display:flex;
+    font-size: .9rem;
+    justify-content: space-between;
+    opacity: .5;
+}
+
+.card .external-link{
+    position:absolute;
+    right: 5px;
+    top: 5px;
+    color:var(--color-lavanda)
+}
+
+.card .external-link:hover{
+    border: none;
+    color:var(--color-lavanda-dark)
+}
 
 /* COLOR DE TEXTOS */
 .text-blanco{
@@ -346,8 +390,8 @@ a.btn.lavanda:active{
 }
 
 /* MARGENES */
-.mb-1{
-    margin-bottom:10px;
+.mb-10{
+    margin-bottom:10px !important;
 }
 
 /*Media qrys*/
@@ -386,9 +430,14 @@ a.btn.lavanda:active{
 
     h1{
         font-size:1.6rem;
+        text-align: center;
     }
 
     .text-logo{
         display:none;
+    }
+
+    .card .card-body p{
+        line-height:1.2rem;
     }
 }
