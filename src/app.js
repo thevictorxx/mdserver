@@ -1,10 +1,13 @@
 const express = require('express')
 const expressMd = require('express-md')
 const morgan = require('morgan')
+const helmet = require("helmet");
 const path = require('path')
 const mainRoutes = require('./routes/main.routes')
 
 const app = express();
+
+app.use(helmet());
 
 let mdRouter = expressMd({
     dir: __dirname + '/docs-md',
