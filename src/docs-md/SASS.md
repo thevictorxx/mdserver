@@ -53,7 +53,7 @@ nav {
 
 No utiliza llaves, solo usa sangría forzada.
 
-```SASS
+```scss
 SASS SYNTAX
 nav
   ul
