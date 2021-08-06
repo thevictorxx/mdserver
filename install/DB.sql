@@ -44,3 +44,10 @@ ALTER TABLE account
 ADD CONSTRAINT FK_Account_Access
 FOREIGN KEY (access) 
 REFERENCES access (id);
+
+INSERT INTO access (access) VALUES
+("Admin"),
+("Usuario");
+
+INSERT INTO account(username, name, lastname, pass, mail, access) VALUES
+("admin", "Victor", "Guzman", "admin", "thevictorxx@gmail.com", 1);
