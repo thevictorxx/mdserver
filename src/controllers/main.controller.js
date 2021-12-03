@@ -63,7 +63,17 @@ const test = (req, res) => {
   });
 };
 
+const add = (req, res) => {
+  res.json("add");
+};
+
+const edit = (req, res) => {
+  res.json("edit");
+};
+
 module.exports = {
   index,
   test,
+  add,
+  edit,
 };
