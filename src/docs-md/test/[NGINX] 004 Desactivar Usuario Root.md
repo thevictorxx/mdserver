@@ -1,5 +1,0 @@
-# PARA DESABILIDAR AL USURIO ROOT 
-DEBEMOS EDITAR EL ARCHIVO DE ESTA UBICACION
-```
-sudo nano /etc/ssh/sshd_config
-```
