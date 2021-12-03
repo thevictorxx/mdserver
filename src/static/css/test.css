@@ -135,7 +135,7 @@ header {
   color: #ffffff;
   position: fixed;
   width: 100%;
-  z-index: 100;
+  z-index: 2;
 }
 
 header nav ul {
@@ -153,10 +153,10 @@ header nav ul li a {
   font-size: 19px;
 }
 
-code{
-  background:gray;
+code {
+  background: gray;
   border-radius: 3px;
-  color:black;
+  color: black;
   padding: 3px 10px;
 }
 
@@ -223,6 +223,7 @@ code{
   padding: 15px 0px;
   top: -80px;
   transition: top 0.3s ease;
+  z-index: 3;
 }
 
 .buscar .buscar-formulario {
@@ -446,6 +447,18 @@ a.btn.lavanda:active {
   color: var(--color-lavanda-dark);
 }
 
+.card .btn-edit {
+  position: absolute;
+  right: 25px;
+  top: 5px;
+  color: var(--color-verde);
+}
+
+.card .btn-edit:hover {
+  border: none;
+  color: var(--color-verde-dark);
+}
+
 /* COLOR DE TEXTOS */
 .text-blanco {
   color: #ffffff !important;
@@ -486,6 +499,15 @@ a.btn.lavanda:active {
 
 .mb-10 {
   margin-bottom: 10px !important;
+}
+
+/* TAMAÑOS */
+.w-50 {
+  width: 50%;
+}
+
+.w-100 {
+  width: 100%;
 }
 
 /*Media qrys*/

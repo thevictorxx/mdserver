@@ -37,6 +37,30 @@
         .btn-volver a:hover {
             background-color: rgb(8, 79, 211);
         }
+
+        /*OTRO*/
+        .btn-editar {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+        }
+
+        .btn-editar a {
+            margin: 0;
+            position: fixed;
+            bottom: 5rem;
+            right: 1rem;
+            padding: 8px 10px;
+            background-color: rgb(42, 116, 255);
+            border-radius: 50%;
+            color: #FFFFFF;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .btn-editar a:hover {
+            background-color: rgb(8, 79, 211);
+        }
     </style>
     <link rel="stylesheet" href="../css/hl/default.min.css">
     <link rel="stylesheet" href="../css/hl/atom-one-dark.css">
@@ -45,6 +69,14 @@
 
 <body>
     <div class="btn-volver">
+        <a href="javascript: history.go(-1)">
+            <svg width="32" height="32" fill="currentColor" class="bi" viewBox="0 0 16 14">
+                <path fill-rule="evenodd"
+                    d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+            </svg>
+        </a>
+    </div>
+    <div class="btn-editar">
         <a href="javascript: history.go(-1)">
             <svg width="32" height="32" fill="currentColor" class="bi" viewBox="0 0 16 14">
                 <path fill-rule="evenodd"
