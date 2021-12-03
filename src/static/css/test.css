@@ -51,6 +51,14 @@ h1 {
   color: var(--color-title);
 }
 
+h2 {
+  font-size: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-family: "DM Sans-Bolt", monospace;
+  font-size: 37px;
+  color: var(--color-title);
+}
+
 p {
   margin-bottom: 1.5rem;
   font-size: 19px; /*1.25*/
@@ -205,6 +213,10 @@ code {
 
 .d-flex {
   display: flex;
+}
+
+.text-center{
+  text-align: center;
 }
 
 .flex-align-items-center {

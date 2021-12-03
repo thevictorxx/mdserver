@@ -64,7 +64,7 @@ const test = (req, res) => {
 };
 
 const add = (req, res) => {
-  res.json("add");
+  res.render("add");
 };
 
 const edit = (req, res) => {

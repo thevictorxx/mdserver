@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MD CheatSheets</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/test.css" />
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="shortcut icon" type="image/png" href="/img/logofinalx48.png" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        section{
+            display: flex;
+        }
+        section div{
+            width: 100%;
+            padding: 10px;
+        }
+        section div input, textarea{
+            width: 100%;
+            display: inline-block;
+            margin-bottom: 20px;
+            padding:5px;
+        }
+        textarea{
+            height: 300px;
+        }
+        section div:first-child{
+            border-radius: 3px;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header">
+          <div class="flex-align-items-center">
+            <img src="img/logofinal.png" width="40px" />
+            <h1 class="text-logo flex-align-items-center">MD CheatSheets</h1>
+          </div>
+          <nav>
+            <ul>
+              <li>
+                <a href="/" class="icon-nav-link"><i class="fa fa-home"></i></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="buscar" id="buscador">
+        <div class="buscar-formulario">
+          <input type="text" class="buscador-header-input" />
+          <a href="#" class="btn azul"><i class="fa fa-search"></i></a>
+          <a href="#" class="btn rojo mb-0" id="cerrar-buscador"
+            ><i class="fa fa-times"></i
+          ></a>
+        </div>
+      </div>
+    </header>
+    <div class="container contenido">
+      <h1>Nuevo Documento</h1>
+      <div class="main">
+        <section>
+          <div>
+            <label class="d-block" for="">Titulo</label>
+            <input type="text" />
+            <label class="d-block" for="">Descripcion</label>
+            <input type="text" />
+            <label class="d-block" for="contenido">Contenido</label>
+            <textarea id="contenido" resize="false"></textarea>
+            <a href="#" id="crearDocumento" class="btn verde text-blanco w-100 text-center">Crear</a>
+          </div>
+          <div>
+            <div id="preview"></div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="js/test.js"></script>
+    <script>
+        const contenido = document.getElementById("contenido");
+        const preview = document.getElementById("preview");
+        const btnCrearDocumento = document.getElementById("crearDocumento")
+ 
+        contenido.addEventListener("keyup", ()=>{
+         preview.innerHTML = marked.parse(contenido.value)
+        })
+
+        btnCrearDocumento.addEventListener("click", (e)=>{
+            e.preventDefault();
+        })
+
+    </script>
+  </body>
+</html>
