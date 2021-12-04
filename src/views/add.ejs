@@ -68,6 +68,9 @@
         .titulo-preview {
           display: block;
         }
+        section div:first-child {
+          padding-right: 0px;
+        }
       }
     </style>
     <link rel="stylesheet" href="../css/md-mod.css" />
@@ -146,9 +149,9 @@
 
       btnCrearDocumento.addEventListener("click", (e) => {
         e.preventDefault();
-        console.log("Titulo", titulo.value);
-        console.log("Descripcion", descripcion.value);
-        console.log("Contenido", contenido.value);
+        // console.log("Titulo", titulo.value);
+        // console.log("Descripcion", descripcion.value);
+        // console.log("Contenido", contenido.value);
 
         fetch("/add", {
           method: "POST",
@@ -163,7 +166,26 @@
           }),
         })
           .then((response) => response.json())
-          .then((response) => console.log(response))
+          .then((response) => {
+            if (response.codigo === 0) {
+              alert("Creado Correctamente!");
+              titulo.value = "";
+              descripcion.value = "";
+              contenido.value = "";
+            }
+
+            if (response.codigo === 1) {
+              alert("Debes completar todos los campos.");
+            }
+
+            if (response.codigo === 2) {
+              alert("Ya existe un archivo con ese nombre, intenta otro.");
+            }
+
+            if (response.codigo === 3) {
+              alert("Error en el servidor, intentelo más tarde.");
+            }
+          })
           .catch((err) => console.log(err));
       });
     </script>
