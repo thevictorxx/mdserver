@@ -2,6 +2,8 @@
 const fs = require("fs");
 const fm = require("front-matter");
 const path = require("path");
+const checkDuplicateFile = require("../utils/checkDuplicateFile.js");
+const createMdFile = require("../utils/createMdFile.js");
 const index = (req, res) => {
   const data = fs.readdirSync(
     path.join(__dirname, "..", "docs-md"),
@@ -67,6 +69,47 @@ const add = (req, res) => {
   res.render("add");
 };
 
+const addPost = (req, res) => {
+  /*
+  CODE RESPUESTAS
+  0 -> OK
+  1 -> ERROR DE CAMPOS
+  2 -> ARCHIVO DUPLICADO
+  3 -> ERROR DESCONOCIDO
+  */
+  const { titulo, descripcion, contenido } = req.body;
+
+  if (
+    titulo.trim() === "" ||
+    descripcion.trim() === "" ||
+    contenido === "" ||
+    contenido === " "
+  ) {
+    res.json({
+      codigo: 1,
+    });
+    return false;
+  }
+
+  if (checkDuplicateFile(titulo)) {
+    res.json({
+      codigo: 2,
+    });
+    return false;
+  }
+
+  if (createMdFile(titulo, descripcion, contenido)) {
+    res.json({
+      codigo: 0,
+    });
+    return false;
+  }
+
+  res.json({
+    codigo: 3,
+  });
+};
+
 const edit = (req, res) => {
   res.json("edit");
 };
@@ -76,4 +119,5 @@ module.exports = {
   test,
   add,
   edit,
+  addPost,
 };

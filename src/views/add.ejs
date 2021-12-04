@@ -13,29 +13,66 @@
     <link rel="shortcut icon" type="image/png" href="/img/logofinalx48.png" />
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
-        *{
-            box-sizing: border-box;
+      * {
+        box-sizing: border-box;
+      }
+      section {
+        display: flex;
+      }
+      section div {
+        width: 100%;
+      }
+      section div:first-child {
+        padding-right: 20px;
+      }
+      section div input,
+      section div textarea {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 5px;
+        box-sizing: border-box;
+      }
+      label {
+        display: block;
+      }
+      textarea {
+        height: 300px;
+        resize: none;
+      }
+      section div:first-child {
+        border-radius: 3px;
+      }
+
+      .container-preview {
+        background-color: white;
+        padding: 10px;
+      }
+      .markdown-body h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #24292e;
+      }
+      .titulo-preview {
+        display: none;
+      }
+      @media screen and (max-width: 700px) {
+        section {
+          flex-direction: column;
         }
-        section{
-            display: flex;
+        section > div {
+          margin-bottom: 30px;
         }
-        section div{
-            width: 100%;
-            padding: 10px;
+        .titulo-preview {
+          display: block;
         }
-        section div input, textarea{
-            width: 100%;
-            display: inline-block;
-            margin-bottom: 20px;
-            padding:5px;
-        }
-        textarea{
-            height: 300px;
-        }
-        section div:first-child{
-            border-radius: 3px;
-        }
+      }
     </style>
+    <link rel="stylesheet" href="../css/md-mod.css" />
+    <link rel="stylesheet" href="../css/hl/default.min.css" />
+    <link rel="stylesheet" href="../css/hl/atom-one-dark.css" />
   </head>
   <body>
     <header>
@@ -64,40 +101,71 @@
         </div>
       </div>
     </header>
-    <div class="container contenido">
+    <div class="container contenido" style="max-width: 98% !important">
       <h1>Nuevo Documento</h1>
-      <div class="main">
+      <div class="">
         <section>
           <div>
-            <label class="d-block" for="">Titulo</label>
-            <input type="text" />
-            <label class="d-block" for="">Descripcion</label>
-            <input type="text" />
-            <label class="d-block" for="contenido">Contenido</label>
-            <textarea id="contenido" resize="false"></textarea>
-            <a href="#" id="crearDocumento" class="btn verde text-blanco w-100 text-center">Crear</a>
+            <label class="d-block" for="titulo">Titulo</label>
+            <input type="text" id="titulo" />
+            <label class="d-block" for="descripcion">Descripcion</label>
+            <input type="text" id="descripcion" />
+            <label for="contenido">Contenido</label>
+            <textarea id="contenido"></textarea>
+            <a
+              href="#"
+              id="crearDocumento"
+              class="btn verde text-blanco w-100 text-center"
+              >Crear</a
+            >
           </div>
-          <div>
-            <div id="preview"></div>
+          <h1 class="titulo-preview">Preview</h1>
+          <div class="container-preview">
+            <div id="preview" class="markdown-body"></div>
           </div>
         </section>
       </div>
     </div>
 
     <script src="js/test.js"></script>
+    <script src="../js/highlight.min.js"></script>
     <script>
-        const contenido = document.getElementById("contenido");
-        const preview = document.getElementById("preview");
-        const btnCrearDocumento = document.getElementById("crearDocumento")
- 
-        contenido.addEventListener("keyup", ()=>{
-         preview.innerHTML = marked.parse(contenido.value)
-        })
+      hljs.highlightAll();
+    </script>
+    <script>
+      const contenido = document.getElementById("contenido");
+      const preview = document.getElementById("preview");
+      const titulo = document.getElementById("titulo");
+      const descripcion = document.getElementById("descripcion");
+      const btnCrearDocumento = document.getElementById("crearDocumento");
 
-        btnCrearDocumento.addEventListener("click", (e)=>{
-            e.preventDefault();
-        })
+      contenido.addEventListener("keyup", () => {
+        preview.innerHTML = marked.parse(contenido.value);
+        hljs.highlightAll();
+      });
 
+      btnCrearDocumento.addEventListener("click", (e) => {
+        e.preventDefault();
+        console.log("Titulo", titulo.value);
+        console.log("Descripcion", descripcion.value);
+        console.log("Contenido", contenido.value);
+
+        fetch("/add", {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            titulo: titulo.value,
+            descripcion: descripcion.value,
+            contenido: contenido.value,
+          }),
+        })
+          .then((response) => response.json())
+          .then((response) => console.log(response))
+          .catch((err) => console.log(err));
+      });
     </script>
   </body>
 </html>
