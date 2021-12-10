@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#161b22" />
+    <title>MD CheatSheets</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="stylesheet" href="../css/test.css" />
+    <link rel="stylesheet" href="../css/font-awesome.css" />
+    <link rel="shortcut icon" type="image/png" href="/img/logofinalx48.png" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      section {
+        display: flex;
+      }
+      section div {
+        width: 100%;
+      }
+      section div:first-child {
+        padding-right: 20px;
+      }
+      section div input,
+      section div textarea {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 5px;
+        box-sizing: border-box;
+      }
+      label {
+        display: block;
+      }
+      textarea {
+        height: 300px;
+        resize: none;
+      }
+      section div:first-child {
+        border-radius: 3px;
+      }
+
+      .container-preview {
+        background-color: white;
+        padding: 10px;
+      }
+      .markdown-body h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #24292e;
+      }
+      .titulo-preview {
+        display: none;
+      }
+      @media screen and (max-width: 700px) {
+        section {
+          flex-direction: column;
+        }
+        section > div {
+          margin-bottom: 30px;
+        }
+        .titulo-preview {
+          display: block;
+        }
+        section div:first-child {
+          padding-right: 0px;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="../css/md-mod.css" />
+    <link rel="stylesheet" href="../css/hl/default.min.css" />
+    <link rel="stylesheet" href="../css/hl/atom-one-dark.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header">
+          <div class="flex-align-items-center">
+            <img src="../img/logofinal.png" width="40px" />
+            <h1 class="text-logo flex-align-items-center">MD CheatSheets</h1>
+          </div>
+          <nav>
+            <ul>
+              <li>
+                <a href="/" class="icon-nav-link"><i class="fa fa-home"></i></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="buscar" id="buscador">
+        <div class="buscar-formulario">
+          <input type="text" class="buscador-header-input" />
+          <a href="#" class="btn azul"><i class="fa fa-search"></i></a>
+          <a href="#" class="btn rojo mb-0" id="cerrar-buscador"
+            ><i class="fa fa-times"></i
+          ></a>
+        </div>
+      </div>
+    </header>
+    <div class="container contenido" style="max-width: 98% !important">
+      <h1>Editar Documento</h1>
+      <div class="">
+        <section>
+          <div>
+            <label class="d-block" for="titulo">Titulo</label>
+            <input type="text" id="titulo" value="<%= titulo %>" />
+            <label class="d-block" for="descripcion">Descripcion</label>
+            <input type="text" id="descripcion" value="<%= descripcion %>" />
+            <label for="contenido">Contenido</label>
+            <textarea id="contenido"><%= contenido %></textarea>
+            <a
+              href="#"
+              id="crearDocumento"
+              class="btn verde text-blanco w-100 text-center"
+              >Crear</a
+            >
+          </div>
+          <h1 class="titulo-preview">Preview</h1>
+          <div class="container-preview">
+            <div id="preview" class="markdown-body"></div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="../js/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+    <script src="../js/editFileController.js"></script>
+  </body>
+</html>
