@@ -76,6 +76,7 @@ const addPost = (req, res) => {
   1 -> ERROR DE CAMPOS
   2 -> ARCHIVO DUPLICADO
   3 -> ERROR DESCONOCIDO
+  4 -> EL ARCHIVO NO EXISTE
   */
   const { titulo, descripcion, contenido } = req.body;
 
@@ -111,7 +112,38 @@ const addPost = (req, res) => {
 };
 
 const edit = (req, res) => {
-  res.json("edit");
+  const { pathFile } = req.params;
+  let archivo = false;
+  let titulo = "";
+  let descripcion = "";
+  let contenido = "";
+
+  // verificar la extencion del parametro
+  const ruta = /^.*\.(md|MD)$/gim.test(pathFile) ? pathFile : `${pathFile}.md`;
+
+  //verificar existencia del archivo y leerlo
+
+  try {
+    archivo = fs.readFileSync(
+      path.join(__dirname, "..", "docs-md", ruta),
+      "utf-8"
+    );
+  } catch (e) {
+    archivo = false;
+  }
+
+  //extraer dator con frontt-mater
+  // datosArchivo = fm(leerArchivo);
+  if (archivo) {
+  } else {
+  }
+  //reemplazar datos y enviar
+
+  res.render("edit", {
+    titulo: titulo,
+    descripcion: descripcion,
+    contenido: contenido,
+  });
 };
 
 module.exports = {

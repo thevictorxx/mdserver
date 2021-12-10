@@ -13,7 +13,7 @@ router.get("/", test);
 
 router.get("/test", test);
 
-router.get("/edit/:path", edit);
+router.get("/edit/:pathFile", edit);
 
 router.get("/add", add);
 
