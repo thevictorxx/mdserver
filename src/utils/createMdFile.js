@@ -4,8 +4,8 @@ const path = require("path");
 module.exports = (titulo, descripcion, contenido) => {
   let estado = true;
   const documento = `---
-titulo: ${titulo}
-descripcion: ${descripcion}
+titulo: "${titulo}"
+descripcion: "${descripcion}"
 ---
    
 ${contenido}`;
