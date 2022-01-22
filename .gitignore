@@ -2,3 +2,4 @@ node_modules
 build
 .env
 **/docs-md/*.md
+**/img/category
