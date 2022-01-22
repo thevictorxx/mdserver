@@ -46,7 +46,8 @@ FOREIGN KEY (access)
 REFERENCES access (id);
 
 INSERT INTO access (access) VALUES
-("Admin"),
+("Administrador"),
+("Moderador"),
 ("Usuario");
 
 INSERT INTO account(username, name, lastname, pass, mail, access) VALUES
