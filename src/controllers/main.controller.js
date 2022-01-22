@@ -4,6 +4,7 @@ const fm = require("front-matter");
 const path = require("path");
 const checkDuplicateFile = require("../utils/checkDuplicateFile.js");
 const createMdFile = require("../utils/createMdFile.js");
+const updateMdFile = require("../utils/updateMdFile.js");
 const index = (req, res) => {
   const data = fs.readdirSync(
     path.join(__dirname, "..", "docs-md"),
@@ -133,11 +134,14 @@ const edit = (req, res) => {
   }
 
   //extraer dator con frontt-mater
-  // datosArchivo = fm(leerArchivo);
   if (archivo) {
+    const { attributes, body } = fm(archivo);
+    titulo = attributes?.titulo;
+    descripcion = attributes?.descripcion;
+    contenido = body;
   } else {
+    res.redirect("/");
   }
-  //reemplazar datos y enviar
 
   res.render("edit", {
     titulo: titulo,
@@ -146,10 +150,45 @@ const edit = (req, res) => {
   });
 };
 
+const editPost = (req, res) => {
+  const { titulo, descripcion, contenido } = req.body;
+  const { pathFile } = req.params;
+  if (
+    titulo.trim() === "" ||
+    descripcion.trim() === "" ||
+    contenido === "" ||
+    contenido === " "
+  ) {
+    res.json({
+      codigo: 1,
+    });
+    return false;
+  }
+  if (checkDuplicateFile(pathFile.slice(0, -3))) {
+    if (updateMdFile(titulo, descripcion, contenido, pathFile)) {
+      res.json({
+        codigo: 0,
+      });
+      return false;
+    } else {
+      res.json({
+        codigo: 3,
+      });
+      return false;
+    }
+  } else {
+    res.json({
+      codigo: 2,
+    });
+    return false;
+  }
+};
+
 module.exports = {
   index,
   test,
   add,
   edit,
   addPost,
+  editPost,
 };
