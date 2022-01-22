@@ -4,6 +4,7 @@ const path = require("path");
 /**
  *
  * @param {String} testFile Archivo a comprobar si esta duplicado
+ * @return {Boolean} true si esta duplicado, false si no esta duplicado
  */
 module.exports = (testFile) => {
   let existe = false;

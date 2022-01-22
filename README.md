@@ -2,7 +2,7 @@
 
 ###  🗄 Archivo de configuración
 
-Se necesita el siguiente archivo con las variables de entorno usadas para un correcto funcionamiento:
+Se necesita el siguiente archivo **`.env`** con las variables de entorno usadas para un correcto funcionamiento:
 
 ```
 # Servidor
