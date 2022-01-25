@@ -522,6 +522,19 @@ a.btn.lavanda:active {
   width: 100%;
 }
 
+/* Form Control */
+
+.form-control{
+  width: 100%;
+}
+.form-control small {
+  display: block;
+  width: 100%;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+
 /*Media qrys*/
 
 /*<850px*/
