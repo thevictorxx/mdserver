@@ -19,7 +19,7 @@ const middlewareUploadMulter = multer({
   storage: storage,
   dest: path.join(__dirname, "../static/img/category"),
   limits: {
-    fileSize: 200000, //Guardado en bite (el valor que esta es 200kb)
+    fileSize: 200000, // hasta 200kb
   },
   fileFilter: (req, file, cb) => {
     const filetypes = /jpeg|jpg|png|ico/; //Formatos permitidos
