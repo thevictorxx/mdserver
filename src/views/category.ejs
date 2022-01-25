@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#161b22" />
+    <title>MD CheatSheets</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/test.css" />
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="shortcut icon" type="image/png" href="/img/logofinalx48.png" />
+    <style>
+      label {
+        display: block;
+      }
+      .containerImagenes {
+        display: none;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #2d2d2dee;
+        background-color: #fff;
+        color: #000000;
+        border-radius: 5px;
+      }
+      .containerImagenes h3 {
+        margin-bottom: 10px;
+      }
+      .containerImagenes div:first-child {
+        margin-right: 40px;
+      }
+      .controlFormulario {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('partials/header') %>
+
+    <div class="container contenido">
+      <h1>Nueva Categoría</h1>
+      <div class="main">
+        <main class="w-100">
+          <form action="category" method="post" enctype="multipart/form-data">
+            <div class="form-control">
+              <label class="mb-10" for="titulo">Nombre nueva categoría</label>
+              <input
+                type="text"
+                class="mb-10 w-100"
+                id="nombreCategoria"
+                placeholder="NGINX, JavaScript, NodeJs ..."
+                name="nombreCategoria"
+                autocomplete="off"
+              />
+            </div>
+            <div class="form-control">
+              <label for="titulo">Seleccionar Imagen</label>
+              <small class="mb-10">(png - jpg - jpeg - ico | < 200Kb)</small>
+              <input
+                type="file"
+                accept=".png,.jpeg,.jpg,.ico"
+                class="mb-10"
+                id="imgInp"
+                name="categoryImg"
+              />
+            </div>
+
+            <div id="containerImagenes" class="d-none mb-10 containerImagenes">
+              <div>
+                <h3>Imagen Actual</h3>
+                <img id="preview1" width="200" src="#" alt="preview image" />
+              </div>
+              <div>
+                <h3>Vista real</h3>
+                <img id="preview2" width="20" src="#" alt="preview image" />
+              </div>
+            </div>
+            <br />
+            <div class="controlFormulario">
+              <a
+                href="#"
+                id="crearCategoriaBtn"
+                class="btn d-block verde text-blanco text-center"
+              >
+                Agregar nueva categoría
+              </a>
+            </div>
+          </form>
+        </main>
+      </div>
+    </div>
+
+    <script src="js/controllerCategory.js"></script>
+  </body>
+</html>
