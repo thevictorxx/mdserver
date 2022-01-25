@@ -1,7 +1,7 @@
 {
-  "short_name": "MdServer",
-  "name": "MarkDown Server",
-  "start_url": "/new.html",
+  "short_name": "MD CheatSheets",
+  "name": "MD CheatSheets",
+  "start_url": "/",
   "background_color": "#0D1117",
   "display": "standalone",
   "theme_color": "#0D1117",
