@@ -1,4 +1,5 @@
 const { Router } = require("express");
+const loginRequired = require("../middleware/loginRequired.middleware");
 const {
   category,
   postCategory,

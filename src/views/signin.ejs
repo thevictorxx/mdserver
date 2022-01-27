@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#161b22" />
+    <title>Login - MD CheatSheets</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="shortcut icon" type="image/png" href="img/logofinalx48.png" />
+  </head>
+  <body>
+    <%- include('partials/header') %>
+
+    <div class="container contenido">
+      <h1>Sign In</h1>
+      <div class="main">
+        <main class="w-100">
+          <div>
+            <div class="form-control mb-10">
+              <label for="">Username:</label>
+              <input type="text" name="username" id="username" />
+            </div>
+            <div class="form-control mb-10">
+              <label for="">Contraseña:</label>
+              <input type="password" name="pass" id="pass" />
+            </div>
+            <div class="form-control mb-10">
+              <a href="#" class="btn verde w-100" id="validarFormulario">Validar Formulario</a>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script>
+      document.getElementById("validarFormulario").addEventListener("click", (e)=>{
+        e.preventDefault()
+        conectar()
+      })
+      const conectar = () => {
+        fetch("signin", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: document.getElementById("username").value,
+            pass: document.getElementById("pass").value,
+          }),
+        })
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            console.log(data);
+          });
+      };
+
+      
+    </script>
+  </body>
+</html>

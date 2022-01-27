@@ -3,12 +3,15 @@ const expressMd = require("express-md");
 const morgan = require("morgan");
 const helmet = require("helmet");
 const path = require("path");
+const cookieParser = require("cookie-parser");
 const mainRoutes = require("./routes/main.routes");
 const categoryRoutes = require("./routes/category.routes");
 const fileRoutes = require("./routes/file.routes");
+const authRoutes = require("./routes/auth.routes");
 
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 
 // Helmet js
 // app.use(helmet.contentSecurityPolicy());
@@ -48,6 +51,7 @@ app.use(express.static(path.join(__dirname, "static")));
 app.use(mainRoutes);
 app.use(categoryRoutes);
 app.use(fileRoutes);
+app.use(authRoutes);
 app.use(mdRouter);
 
 module.exports = app;

@@ -7,17 +7,28 @@
       </div>
       <nav>
         <ul>
+          <% if (false) {%>
+          <li>
+            <a href="add" class="icon-nav-link">
+              <i class="fa fa-user-circle"></i>
+            </a>
+          </li>
+          <li>
+            <a href="category" class="icon-nav-link">
+              <i class="fa fa-bookmark"></i>
+            </a>
+          </li>
           <li>
             <a href="add" class="icon-nav-link"><i class="fa fa-plus"></i></a>
           </li>
-          <li>
-            <a href="category" class="icon-nav-link"><i class="fa fa-bookmark"></i></a>
-          </li>
-          <li>
-            <a href="add" class="icon-nav-link"><i class="fa fa-user"></i></a>
-          </li>
+          <% } %>
           <li>
             <a href="/" class="icon-nav-link"><i class="fa fa-home"></i></a>
+          </li>
+          <li>
+            <a href="/signin" class="icon-nav-link">
+              <i class="fa fa-sign-in"></i>
+            </a>
           </li>
         </ul>
       </nav>
@@ -25,9 +36,11 @@
   </div>
   <div class="buscar" id="buscador">
     <div class="buscar-formulario">
-      <input type="text" class="buscador-header-input">
+      <input type="text" class="buscador-header-input" />
       <a href="#" class="btn azul"><i class="fa fa-search"></i></a>
-      <a href="#" class="btn rojo mb-0" id="cerrar-buscador"><i class="fa fa-times"></i></a>
+      <a href="#" class="btn rojo mb-0" id="cerrar-buscador"
+        ><i class="fa fa-times"></i
+      ></a>
     </div>
   </div>
 </header>

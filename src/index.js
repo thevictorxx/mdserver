@@ -1,6 +1,5 @@
-const { config } = require("dotenv");
+require("dotenv").config();
 const app = require("./app");
-config();
 
 app.listen(process.env.PORT, () => {
   console.log(`Corriendo en puerto ${process.env.PORT}`);
