@@ -15,7 +15,7 @@ const loginRequired = (req, res, next) => {
     return res.status(401).redirect("/signin");
   }
 
-  if (!token.username) {
+  if (!token.credenciales) {
     return res.status(401).redirect("/signin");
   }
 
