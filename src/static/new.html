@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/balloon.css" />
     <link rel="stylesheet" href="css/font-awesome.css" />
+    <link rel="stylesheet" href="css/md-mod.css" />
+    <link rel="stylesheet" href="css/hl/default.min.css" />
+    <link rel="stylesheet" href="css/hl/atom-one-dark.css" />
     <link rel="manifest" href="manifest.json" />
     <link rel="shortcut icon" type="image/png" href="/img/logofinalx48.png" />
   </head>
@@ -27,7 +31,8 @@
               </li>
               <li>
                 <a href="#" id="btn-buscar-nav" class="icon-nav-link">
-                  <i class="fa fa-search"></i></a>
+                  <i class="fa fa-search"></i
+                ></a>
               </li>
               <li><a href="#" class="categoria-nav">Categoría</a></li>
             </ul>
@@ -36,9 +41,11 @@
       </div>
       <div class="buscar" id="buscador">
         <div class="buscar-formulario">
-          <input type="text" class="buscador-header-input">
+          <input type="text" class="buscador-header-input" />
           <a href="#" class="btn azul"><i class="fa fa-search"></i></a>
-          <a href="#" class="btn rojo mb-0" id="cerrar-buscador"><i class="fa fa-times"></i></a>
+          <a href="#" class="btn rojo mb-0" id="cerrar-buscador"
+            ><i class="fa fa-times"></i
+          ></a>
         </div>
       </div>
     </header>
@@ -46,6 +53,22 @@
       <h1>Contenidos</h1>
       <div class="main">
         <main>
+          <h2>Titulos</h2>
+          <div class="cuadro mb-10">
+            <h1>Header 1</h1>
+            <h2>Header 2</h2>
+            <h3>Header 3</h3>
+            <h4>Header 4</h4>
+            <h5>Header 5</h5>
+            <h6>Header 6</h6>
+          </div>
+          <pre><code class="mb-20 language-html">&lt;h1&gt;Header 1&lt;/h1&gt;
+&lt;h2&gt;Header 2&lt;/h2&gt;
+&lt;h3&gt;Header 3&lt;/h3&gt;
+&lt;h4&gt;Header 4&lt;/h4&gt;
+&lt;h5&gt;Header 5&lt;/h5&gt;
+&lt;h6&gt;Header 6&lt;/h6&gt;</code></pre>
+          <h2>Card</h2>
           <div class="card">
             <a href="#" class="external-link">
               <i class="fa fa-external-link"></i>
@@ -71,46 +94,93 @@
             </div>
           </div>
 
+          <pre><code class="mb-20 language-html">&lt;div class=&quot;card&quot;&gt;
+  &lt;a href=&quot;#&quot; class=&quot;external-link&quot;&gt;
+    &lt;i class=&quot;fa fa-external-link&quot;&gt;&lt;/i&gt;
+  &lt;/a&gt;
+  &lt;div class=&quot;card-title&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;Content title&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;card-body&quot;&gt;
+    &lt;p&gt;
+      ...
+    &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;card-footer&quot;&gt;
+    &lt;div&gt;&lt;i class=&quot;fa fa-file&quot;&gt;&lt;/i&gt; 22-08-2021&lt;/div&gt;
+    &lt;div&gt;&lt;i class=&quot;fa fa-calendar&quot;&gt;&lt;/i&gt; 22-08-2021&lt;/div&gt;
+    &lt;div&gt;&lt;i class=&quot;fa fa-cubes&quot;&gt;&lt;/i&gt; Categoria&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+          <hr>
+          <h2>Inputs</h2>
+          <h4>Conjunto para formularios</h4>
+          <div class="cuadro mb-10 p-20">
+            <div class="form-control">
+              <label>Nombre:</label>
+              <input type="text" />
+              <small>Campo Small</small>
+            </div>
+          </div>
+          <pre><code class="mb-20 language-html">&lt;div class=&quot;form-control&quot;&gt;
+  &lt;label&gt;Nombre:&lt;/label&gt;
+  &lt;input type=&quot;text&quot; /&gt;
+  &lt;small&gt;Campo Small&lt;/small&gt;
+&lt;/div&gt;</code></pre>
+          
+
+
+
           <div>
-            <label>Nombre:</label>
-            <input type="text">
-            <small>Campo Small</small>
+            <input class="mb-10" type="password" />
           </div>
           <div>
-            <input type="password">
+            <input class="mb-10" type="email" />
           </div>
           <div>
-            <input type="email">
+            <input class="mb-10" type="number" />
           </div>
           <div>
-            <input type="number">
+            <input class="mb-10" type="date" />
           </div>
           <div>
-            <input type="date">
+            <input class="mb-10" type="time" />
           </div>
           <div>
-            <input type="time">
+            <input class="mb-10" type="search" />
           </div>
           <div>
-            <input type="search">
+            <input class="mb-10" type="tel" />
           </div>
           <div>
-            <input type="tel">
+            <input class="mb-10" type="radio" />
           </div>
           <div>
-            <input type="radio">
+            <input class="mb-10" type="checkbox" />
           </div>
-          <div>
-            <input type="checkbox">
-          </div>
-          <div>
+          <div class="mb-10">
             <textarea></textarea>
           </div>
 
+          <pre><code class="mb-20 language-html">&lt;input class=&quot;mb-10&quot; type=&quot;password&quot; /&gt;
+&lt;input class=&quot;mb-10&quot; type=&quot;email&quot; /&gt;
+&lt;input class=&quot;mb-10&quot; type=&quot;number&quot; /&gt;
+&lt;input class=&quot;mb-10&quot; type=&quot;date&quot; /&gt;
+&lt;input class=&quot;mb-10&quot; type=&quot;time&quot; /&gt;
+&lt;input class=&quot;mb-10&quot; type=&quot;search&quot; /&gt;
+&lt;input class=&quot;mb-10&quot; type=&quot;tel&quot; /&gt;
+&lt;input class=&quot;mb-10&quot; type=&quot;radio&quot; /&gt;
+&lt;input class=&quot;mb-10&quot; type=&quot;checkbox&quot; /&gt;
+&lt;textarea&gt;&lt;/textarea&gt;</code></pre>
+
+          <hr>
+          <h2>Texto</h2>
           <p>
-            Lorem ipsum dolor <code>texto code</code> consectetur adipisicing elit. Odit
-            suscipit numquam perferendis et? Expedita at libero, sapiente non
-            neque nesciunt,
+            Lorem ipsum dolor <code>texto code</code> consectetur adipisicing
+            elit. Odit suscipit numquam perferendis et? Expedita at libero,
+            sapiente non neque nesciunt,
             <a href="#">provident totam voluptas</a> fugit vitae explicabo
             placeat rerum dolorem ex dolor eaque obcaecati labore molestiae aut
             et beatae cupiditate? Quam dolorem quasi non distinctio blanditiis
@@ -124,10 +194,17 @@
             <span class="text-rojo-dark">asperiores</span> harum aperiam cumque,
             commodi distinctio impedit enim!
           </p>
+
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-            suscipit numquam <span class="text-lavanda">asperiores</span> et?
-            Expedita at libero, sapiente non neque nesciunt,
+            suscipit numquam
+            <span
+              aria-label="Whats up!"
+              data-balloon-pos="up"
+              class="text-lavanda"
+              >asperiores</span
+            >
+            et? Expedita at libero, sapiente non neque nesciunt,
             <a href="#">provident totam voluptas</a> fugit vitae explicabo
             placeat rerum dolorem ex dolor eaque obcaecati labore molestiae aut
             et beatae cupiditate? Quam dolorem quasi non distinctio blanditiis
@@ -142,7 +219,12 @@
             repellendus magnam fugit nemo, laborum ratione harum aperiam cumque,
             commodi distinctio impedit enim!
           </p>
-
+          <pre><code class="mb-20 language-html">&lt;span class=&quot;text-rojo&quot;&gt;texto&lt;/span&gt;
+&lt;span class=&quot;text-rojo-dark&quot;&gt;texto&lt;/span&gt;
+&lt;span class=&quot;text-verde&quot;&gt;texto&lt;/span&gt;
+&lt;span class=&quot;text-amarillo&quot;&gt;texto&lt;/span&gt;</code></pre>
+          <hr>
+          <h2>Botones</h2>
           <a href="#" class="mb-10 btn">Link To Aqui</a>
           <a href="#" class="mb-10 btn rojo">Other</a>
           <a href="#" class="mb-10 btn amarillo">Other</a>
@@ -151,6 +233,54 @@
           <a href="#" class="mb-10 btn verde text-blanco">Other</a>
           <a href="#" class="mb-10 btn lavanda">Other</a>
           <a href="#" class="verde">sin</a>
+          <pre><code class="mb-20 language-html">&lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Link To Aqui&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn rojo&quot;&gt;Other&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn amarillo&quot;&gt;Other&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn azul&quot;&gt;Other&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn verde&quot;&gt;Other&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn verde text-blanco&quot;&gt;Other&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn lavanda&quot;&gt;Other&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;sin&lt;/a&gt;</code></pre>
+          <!-- TOOLTIP -->
+          <hr>
+          <h2>Tooltip</h2>
+          <p>Por el momento requiere la importacion de:</p>
+          <pre><code class="mb-20 language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;css/balloon.css&quot; /&gt;</code></pre>
+          <h4>Posiciones</h4>
+          <div class="cuadro mb-10 blanco p-20">
+            <button aria-label="Whats up!" class="p-5 m-5" data-balloon-pos="up">Hover 1! 😄</button>
+            <button aria-label="Whats up!" class="p-5 m-5" data-balloon-pos="left">Hover 2! 😄</button>
+            <button aria-label="Whats up!" class="p-5 m-5" data-balloon-pos="right">Hover 3! 😄</button>
+            <button aria-label="Whats up!" class="p-5 m-5" data-balloon-pos="down">Hover 4! 😄</button>
+            <button aria-label="Whats up!" class="p-5 m-5" data-balloon-pos="up-left">Hover 5! 😄</button>
+            <button aria-label="Whats up!" class="p-5 m-5" data-balloon-pos="up-right">Hover 6! 😄</button>
+            <button aria-label="Whats up!" class="p-5 m-5" data-balloon-pos="down-left">Hover 7! 😄</button>
+            <button aria-label="Whats up!" class="p-5 m-5" data-balloon-pos="down-right">Hover 8! 😄</button>
+          </div>
+
+          <pre><code class="mb-20 language-html">&lt;button aria-label=&quot;Whats up!&quot; data-balloon-pos=&quot;up&quot;&gt;Hover 1! 😄&lt;/button&gt;
+&lt;button aria-label=&quot;Whats up!&quot; data-balloon-pos=&quot;left&quot;&gt;Hover 2! 😄&lt;/button&gt;
+&lt;button aria-label=&quot;Whats up!&quot; data-balloon-pos=&quot;right&quot;&gt;Hover 3! 😄&lt;/button&gt;
+&lt;button aria-label=&quot;Whats up!&quot; data-balloon-pos=&quot;down&quot;&gt;Hover 4! 😄&lt;/button&gt;
+&lt;button aria-label=&quot;Whats up!&quot; data-balloon-pos=&quot;up-left&quot;&gt;Hover 5! 😄&lt;/button&gt;
+&lt;button aria-label=&quot;Whats up!&quot; data-balloon-pos=&quot;up-right&quot;&gt;Hover 6! 😄&lt;/button&gt;
+&lt;button aria-label=&quot;Whats up!&quot; data-balloon-pos=&quot;down-left&quot;&gt;Hover 7! 😄&lt;/button&gt;
+&lt;button aria-label=&quot;Whats up!&quot; data-balloon-pos=&quot;down-right&quot;&gt;Hover 8! 😄&lt;/button&gt;</code></pre>
+          <h4>Tamaños</h4>
+          <div class="cuadro mb-10 blanco p-20 text-center">
+            <button class="p-5 m-5" data-balloon-length="small" aria-label="Hi." data-balloon-pos="up">1.- Small tooltip</button>
+            <button class="p-5 m-5" data-balloon-length="medium" aria-label="Now that's a super big text we have over here right? Lorem ipsum dolor sit I'm done." data-balloon-pos="up">2.- medium tooltip.</button>
+            <button class="p-5 m-5" data-balloon-length="large" aria-label="What about something really big? This may surpass your window dimensions. Imagine you're on that boring class with that boring teacher and you didn't slept so well last night. Suddenly you're sleeping in class. Can you believe it?!" data-balloon-pos="up">3.- Large tooltip</button>
+            <button class="p-5 m-5" data-balloon-length="xlarge" aria-label="What about something really big? This may surpass your window dimensions. Imagine you're on that boring class with that boring teacher and you didn't slept so well last night. Suddenly you're sleeping in class. Can you believe it?!" data-balloon-pos="up">4.- Xlarge tooltip</button>
+            <button class="p-5 m-5" data-balloon-length="fit" aria-label="What about something really big? This may surpass your window dimensions. Imagine you're on that boring class with that boring teacher and you didn't slept so well last night. Suddenly you're sleeping in class. Can you believe it?!" data-balloon-pos="up">5.- Tamaño fijado al elemento</button>
+          </div>
+
+          <pre><code class="mb-20 language-html">&lt;button data-balloon-length=&quot;small&quot; aria-label=&quot;...&quot; data-balloon-pos=&quot;up&quot;&gt;1.- Small tooltip&lt;/button&gt;
+&lt;button data-balloon-length=&quot;medium&quot; aria-label=&quot;...&quot;data-balloon-pos=&quot;up&quot;&gt;2.- medium tooltip.&lt;/button&gt;
+&lt;button data-balloon-length=&quot;large&quot; aria-label=&quot;...&quot;data-balloon-pos=&quot;up&quot;&gt;3.- Large tooltip&lt;/button&gt;
+&lt;button data-balloon-length=&quot;xlarge&quot; aria-label=&quot;..&quot;data-balloon-pos=&quot;up&quot;&gt;4.- Xlarge tooltip&lt;/button&gt;
+&lt;button data-balloon-length=&quot;fit&quot; aria-label=&quot;...&quot;data-balloon-pos=&quot;up&quot;&gt;5.- Tamaño fijado al elemento&lt;/button&gt;</code></pre>
+            
         </main>
         <aside>
           <h2>Categorías</h2>
@@ -182,11 +312,26 @@
               >
             </li>
           </ul>
+          <div></div>
         </aside>
       </div>
     </div>
+    <!-- <div class="mensaje-ventana">
+      <div class="cerrar">&times;</div>
+      <div class="titulo">Titulo del mensaje</div>
+      <section>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima vitae
+        unde nesciunt officiis ea sit iure expedita commodi explicabo
+        necessitatibus rerum beatae tenetur facilis nemo, optio aliquid. Iure
+        voluptatum et eligendi consequuntur officia placeat ullam veniam natus!
+        Quasi vero iusto vel pariatur.
+      </section>
+    </div> -->
 
     <script src="js/test.js"></script>
-
+    <script src="js/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
   </body>
 </html>

@@ -72,3 +72,12 @@ code.hljs {
 .hljs-punctuation, .hljs-tag{
     color: #ABB0BB !important;
 }
+
+/*Custom*/
+.hljs-tag .hljs-attr, .hljs-tag .hljs-name {
+  color: #e06c75;
+}
+
+.hljs-attribute, .hljs-doctag, .hljs-keyword, .hljs-meta .hljs-keyword, .hljs-name, .hljs-selector-tag {
+  font-weight: 500;
+}

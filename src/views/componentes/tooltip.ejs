@@ -1,0 +1,39 @@
+<article>
+  <h2>Tooltip</h2>
+  <p>Por el momento requiere la importacion de:</p>
+  <pre><code class="mb-20 language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;css/balloon.css&quot; /&gt;</code></pre>
+  <h4>Posiciones</h4>
+  <div class="cuadro mb-10 blanco p-20">
+    <button aria-label="Whats up!" class="p-5 m-5" data-balloon-pos="up">Hover 1! 😄</button>
+    <button aria-label="Whats up!" class="p-5 m-5" data-balloon-pos="left">Hover 2! 😄</button>
+    <button aria-label="Whats up!" class="p-5 m-5" data-balloon-pos="right">Hover 3! 😄</button>
+    <button aria-label="Whats up!" class="p-5 m-5" data-balloon-pos="down">Hover 4! 😄</button>
+    <button aria-label="Whats up!" class="p-5 m-5" data-balloon-pos="up-left">Hover 5! 😄</button>
+    <button aria-label="Whats up!" class="p-5 m-5" data-balloon-pos="up-right">Hover 6! 😄</button>
+    <button aria-label="Whats up!" class="p-5 m-5" data-balloon-pos="down-left">Hover 7! 😄</button>
+    <button aria-label="Whats up!" class="p-5 m-5" data-balloon-pos="down-right">Hover 8! 😄</button>
+  </div>
+
+  <pre><code class="mb-20 language-html">&lt;button aria-label=&quot;Whats up!&quot; data-balloon-pos=&quot;up&quot;&gt;Hover 1! 😄&lt;/button&gt;
+&lt;button aria-label=&quot;Whats up!&quot; data-balloon-pos=&quot;left&quot;&gt;Hover 2! 😄&lt;/button&gt;
+&lt;button aria-label=&quot;Whats up!&quot; data-balloon-pos=&quot;right&quot;&gt;Hover 3! 😄&lt;/button&gt;
+&lt;button aria-label=&quot;Whats up!&quot; data-balloon-pos=&quot;down&quot;&gt;Hover 4! 😄&lt;/button&gt;
+&lt;button aria-label=&quot;Whats up!&quot; data-balloon-pos=&quot;up-left&quot;&gt;Hover 5! 😄&lt;/button&gt;
+&lt;button aria-label=&quot;Whats up!&quot; data-balloon-pos=&quot;up-right&quot;&gt;Hover 6! 😄&lt;/button&gt;
+&lt;button aria-label=&quot;Whats up!&quot; data-balloon-pos=&quot;down-left&quot;&gt;Hover 7! 😄&lt;/button&gt;
+&lt;button aria-label=&quot;Whats up!&quot; data-balloon-pos=&quot;down-right&quot;&gt;Hover 8! 😄&lt;/button&gt;</code></pre>
+  <h4>Tamaños</h4>
+  <div class="cuadro mb-10 blanco p-20 text-center">
+    <button class="p-5 m-5" data-balloon-length="small" aria-label="Hi." data-balloon-pos="up">1.- Small tooltip</button>
+    <button class="p-5 m-5" data-balloon-length="medium" aria-label="Now that's a super big text we have over here right? Lorem ipsum dolor sit I'm done." data-balloon-pos="up">2.- medium tooltip.</button>
+    <button class="p-5 m-5" data-balloon-length="large" aria-label="What about something really big? This may surpass your window dimensions. Imagine you're on that boring class with that boring teacher and you didn't slept so well last night. Suddenly you're sleeping in class. Can you believe it?!" data-balloon-pos="up">3.- Large tooltip</button>
+    <button class="p-5 m-5" data-balloon-length="xlarge" aria-label="What about something really big? This may surpass your window dimensions. Imagine you're on that boring class with that boring teacher and you didn't slept so well last night. Suddenly you're sleeping in class. Can you believe it?!" data-balloon-pos="up">4.- Xlarge tooltip</button>
+    <button class="p-5 m-5" data-balloon-length="fit" aria-label="What about something really big? This may surpass your window dimensions. Imagine you're on that boring class with that boring teacher and you didn't slept so well last night. Suddenly you're sleeping in class. Can you believe it?!" data-balloon-pos="up">5.- Tamaño fijado al elemento</button>
+  </div>
+
+  <pre><code class="mb-20 language-html">&lt;button data-balloon-length=&quot;small&quot; aria-label=&quot;...&quot; data-balloon-pos=&quot;up&quot;&gt;1.- Small tooltip&lt;/button&gt;
+&lt;button data-balloon-length=&quot;medium&quot; aria-label=&quot;...&quot;data-balloon-pos=&quot;up&quot;&gt;2.- medium tooltip.&lt;/button&gt;
+&lt;button data-balloon-length=&quot;large&quot; aria-label=&quot;...&quot;data-balloon-pos=&quot;up&quot;&gt;3.- Large tooltip&lt;/button&gt;
+&lt;button data-balloon-length=&quot;xlarge&quot; aria-label=&quot;..&quot;data-balloon-pos=&quot;up&quot;&gt;4.- Xlarge tooltip&lt;/button&gt;
+&lt;button data-balloon-length=&quot;fit&quot; aria-label=&quot;...&quot;data-balloon-pos=&quot;up&quot;&gt;5.- Tamaño fijado al elemento&lt;/button&gt;</code></pre>
+</article>

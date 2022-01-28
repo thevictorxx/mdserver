@@ -12,55 +12,38 @@
     <link rel="stylesheet" href="css/font-awesome.css" />
     <link rel="manifest" href="manifest.json" />
     <link rel="shortcut icon" type="image/png" href="img/logofinalx48.png" />
+    <link rel="stylesheet" href="css/hl/default.min.css" />
+    <link rel="stylesheet" href="css/hl/atom-one-dark.css" />
   </head>
   <body>
     <%- include('partials/header') %>
 
     <div class="container contenido">
-      <h1>Sign In</h1>
+      <h1>Login</h1>
       <div class="main">
         <main class="w-100">
           <div>
-            <div class="form-control mb-10">
+            <div class="form-control mb-20">
               <label for="">Username:</label>
               <input type="text" name="username" id="username" />
             </div>
-            <div class="form-control mb-10">
+            <div class="form-control mb-20">
               <label for="">Contraseña:</label>
               <input type="password" name="pass" id="pass" />
             </div>
-            <div class="form-control mb-10">
-              <a href="#" class="btn verde w-100" id="validarFormulario">Validar Formulario</a>
+            <div class="form-control mb-20">
+              <a href="#" class="btn verde w-100 text-center text-blanco" id="validarFormulario">Sign In</a>
+              <a href="#" class="btn btn-spinner spinner-verde verde w-100 d-none" id="validandoFormulario"><div class="spinner-2"></div></a>              
             </div>
           </div>
         </main>
       </div>
     </div>
-    <script>
-      document.getElementById("validarFormulario").addEventListener("click", (e)=>{
-        e.preventDefault()
-        conectar()
-      })
-      const conectar = () => {
-        fetch("signin", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            username: document.getElementById("username").value,
-            pass: document.getElementById("pass").value,
-          }),
-        })
-          .then(function (response) {
-            return response.json();
-          })
-          .then(function (data) {
-            console.log(data);
-          });
-      };
-
-      
-    </script>
+    <div class="mensaje-ventana">
+      <div class="cerrar">&times;</div>
+      <div class="titulo">Titulo del mensaje</div>
+      <section>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima vitae unde nesciunt officiis ea sit iure expedita commodi explicabo necessitatibus rerum beatae tenetur facilis nemo, optio aliquid. Iure voluptatum et eligendi consequuntur officia placeat ullam veniam natus! Quasi vero iusto vel pariatur, possimus reprehenderit earum eum perferendis inventore soluta nesciunt harum voluptate nihil quos nemo voluptatibus necessitatibus ea magnam a nobis impedit adipisci? Facere dolores deserunt velit suscipit accusantium unde ipsam voluptate enim nihil ut beatae officia id eveniet dicta amet eius aut, obcaecati consequuntur. Error in culpa et aspernatur at ut recusandae, laudantium eveniet eaque nisi animi iusto blanditiis.</section>
+    </div>
+    <script src="js/signin.js"></script>
   </body>
 </html>

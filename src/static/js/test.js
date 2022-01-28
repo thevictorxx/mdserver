@@ -12,3 +12,13 @@
 //     e.preventDefault();
 //     buscador.style.top = "-80px";
 // })
+
+(() => {
+  const $$closeWindows = document.querySelectorAll(".cerrar");
+  $$closeWindows.forEach((element) => {
+    element.addEventListener("click", (e) => {
+      e.preventDefault();
+      element.parentElement.classList.add("d-none");
+    });
+  });
+})();

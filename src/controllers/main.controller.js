@@ -63,7 +63,12 @@ const index = (req, res) => {
   });
 };
 
+const estilos = (req, res) => {
+  res.render("estilos");
+};
+
 module.exports = {
   index,
   test,
+  estilos,
 };
