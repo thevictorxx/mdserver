@@ -51,4 +51,4 @@ INSERT INTO access (access) VALUES
 ("Usuario");
 
 INSERT INTO account(username, name, lastname, pass, mail, access) VALUES
-("admin", "Victor", "Guzman", "admin", "thevictorxx@gmail.com", 1);
+("admin", "Victor", "Guzman", "$2a$10$UsX16q.NcJwfbN2GcDln0uAkyJDvfUSspXtCr9F8kob4GyDL9JuRq", "thevictorxx@gmail.com", 1);
