@@ -7,13 +7,15 @@ const {
   editPost,
 } = require("../controllers/file.controller");
 
+const adminAccess = require("../middleware/adminAccess.middleware");
+
 const router = Router();
 
-router.get("/edit/:pathFile", edit);
+router.get("/edit/:pathFile", adminAccess, edit);
 
-router.post("/edit/:pathFile", editPost);
+router.post("/edit/:pathFile", adminAccess, editPost);
 
-router.get("/add", add);
+router.get("/add", adminAccess, add);
 
 router.post("/add", addPost);
 
