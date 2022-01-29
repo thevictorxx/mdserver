@@ -482,7 +482,17 @@ a.btn.lavanda:active {
   display: flex;
   font-size: 0.9rem;
   justify-content: space-between;
-  opacity: 0.5;
+  align-items: center;
+}
+
+.card .card-footer > div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card .card-footer > div > i{
+  margin-right: 5px;
 }
 
 .card .external-link {
@@ -507,6 +517,12 @@ a.btn.lavanda:active {
 .card .btn-edit:hover {
   border: none;
   color: var(--color-verde-dark);
+}
+
+.card img{
+  opacity: 1;
+  width: 25px;
+  margin-right: 5px;
 }
 
 /* COLOR DE TEXTOS */
