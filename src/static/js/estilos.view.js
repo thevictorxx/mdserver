@@ -10,7 +10,6 @@
 
 const $$h2 = document.querySelectorAll("article>h2");
 $$h2.forEach(($h2, index) => {
-  console.log(index);
   $h2.innerHTML = `<a href="#h2-${index + 1}">${index + 1}.- ${
     $h2.innerHTML
   }</a>`;
@@ -27,5 +26,4 @@ $$h2.forEach(($h2, index) => {
       $closeAlert.parentElement.classList.add("d-none");
     });
   });
-  console.log($$closeAlert);
 })();

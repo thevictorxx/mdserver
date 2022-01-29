@@ -10,7 +10,6 @@ const test = (req, res) => {
         onError(err);
         return;
       }
-      console.log(archivos);
       return archivos;
     }
   );
@@ -32,7 +31,6 @@ const index = (req, res) => {
         onError(err);
         return;
       }
-      console.log(archivos);
       return archivos;
     }
   );

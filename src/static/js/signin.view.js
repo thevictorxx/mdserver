@@ -30,7 +30,6 @@ const conectar = () => {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
       if (data.error) {
         $alerta.innerHTML = `${data.message}`;
         $alerta.classList.remove("d-none");
