@@ -621,6 +621,7 @@ a.btn.lavanda:active {
 
 .form-control label{
   font-size: 1.1rem;
+  margin-bottom:5px;
 }
 
 .form-control input{
