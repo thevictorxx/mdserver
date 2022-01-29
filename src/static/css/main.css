@@ -52,6 +52,10 @@ body {
   box-sizing: border-box;
 }
 
+button{
+  cursor: pointer;
+}
+
 h1 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
@@ -554,6 +558,10 @@ a.btn.lavanda:active {
   color: var(--color-amarillo-dark) !important;
 }
 
+.text-dark {
+  color: var(--color-gris-dark) !important;
+}
+
 .text-lavanda {
   color: var(--color-lavanda) !important;
 }
@@ -611,6 +619,14 @@ a.btn.lavanda:active {
 
 .w-100 {
   width: 100%;
+}
+
+/* Centrado */
+.flex-center-xy{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Form Control */
@@ -797,8 +813,51 @@ a.btn.lavanda:active {
 .alert strong{
   font-weight: bold;
 }
-/*Media qrys*/
 
+/* Tablas */
+.tabla{
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.tabla > thead {
+  background: #f0efef;
+  color: var(--color-gris-dark);
+  font-weight: 500;
+}
+
+.tabla > thead > tr > th{
+  padding: 10px;
+}
+
+.tabla > thead > tr > th{
+  padding: 10px;
+  border-left: 2px solid var(--color-gris-dark);
+}
+
+.tabla > thead > tr > th:first-child{
+  border-left: none;
+}
+
+.tabla > tbody{
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+.tabla > tbody > tr > td{
+  padding: 10px;
+  border-bottom: 2px solid #FFFFFF;
+  border-left: 2px solid #FFFFFF;
+  font-weight: 500;
+  vertical-align: middle;
+}
+.tabla > tbody > tr > td:first-child{
+  border-left: none;
+}
+
+/*Media qrys*/
 /*<850px*/
 @media screen and (min-width: 700px) {
   .categoria-nav {

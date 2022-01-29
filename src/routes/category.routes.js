@@ -3,6 +3,8 @@ const loginRequired = require("../middleware/loginRequired.middleware");
 const {
   category,
   postCategory,
+  getAllCategory,
+  deleteCategory,
 } = require("../controllers/category.controller");
 const {
   middlewareUploadMulter,
@@ -11,6 +13,10 @@ const {
 const router = Router();
 
 router.get("/category", category);
+
+router.delete("/category/:id", deleteCategory);
+
+router.get("/getCategory", getAllCategory);
 
 router.post("/category", middlewareUploadMulter, postCategory);
 

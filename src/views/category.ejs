@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/balloon.css" />
     <link rel="stylesheet" href="css/font-awesome.css" />
     <link rel="manifest" href="manifest.json" />
     <link rel="shortcut icon" type="image/png" href="/img/logofinalx48.png" />
@@ -41,18 +42,24 @@
         align-items: center;
         margin-top: 20px;
       }
+      .formulario-m{
+        max-width: 400px;
+        margin: 0 auto;
+        border: 1px thin #FFFFFFaa;
+      }
     </style>
   </head>
   <body>
     <%- include('partials/header') %>
 
     <div class="container contenido">
-      <h1>Nueva Categoría</h1>
+      <h1>Categorías</h1>
       <div class="main">
         <main class="w-100">
-          <form action="category" method="post" enctype="multipart/form-data">
-            <div class="form-control">
-              <label for="titulo">Nombre nueva categoría</label>
+          <form action="category" class="mb-30 formulario-m" method="post" enctype="multipart/form-data">
+            <h3>Nueva</h3>
+            <div class="form-control mb-20">
+              <label for="titulo">Nombre nueva categoría:</label>
               <input
                 type="text"
                 class="mb-10 w-100"
@@ -63,7 +70,7 @@
               />
             </div>
             <div class="form-control">
-              <label for="titulo">Seleccionar Imagen</label>
+              <label for="titulo">Seleccionar Imagen:</label>
               <small class="mb-10">(png - jpg - jpeg - ico | < 200Kb)</small>
               <input
                 type="file"
@@ -74,17 +81,30 @@
               />
             </div>
 
-            <div id="containerImagenes" class="d-none mb-10 containerImagenes">
+            <div id="containerImagenes" class="mb-20 containerImagenes">
               <div>
-                <h3>Imagen Actual</h3>
-                <img id="preview1" width="200" src="#" alt="preview image" />
+                <h6 class="text-dark">Imagen</h3>
+                <img id="preview1" width="190" src="#" alt="preview image" />
               </div>
               <div>
-                <h3>Vista real</h3>
-                <img id="preview2" width="20" src="#" alt="preview image" />
+                <h6 class="text-dark">Vista real</h3>
+                <img id="preview2" width="25" src="#" alt="preview image" />
               </div>
             </div>
-            <br />
+            <div class="contenedor-mensajes">
+              <div class="alert roja mb-5" id="mensaje-incorrecto">
+                <i class="close">&times;</i>
+                <div>
+                  Mensaje
+                </div>
+              </div>
+              <div class="alert verde" id="mensaje-correcto">
+                <i class="close">&times;</i>
+                <div>
+                  Mensaje
+                </div>
+              </div>
+            </div>
             <div class="controlFormulario">
               <a
                 href="#"
@@ -95,10 +115,29 @@
               </a>
             </div>
           </form>
+          <article>
+            <h3>Listado de categorías</h3>
+            <table class="tabla" >
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Imagen</th>
+                  <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody class="text-center"id="tablaCategorias">
+                <tr>
+                  <td style="position: relative; padding:50px"><div class="spinner-2"></div></td>
+                  <td style="position: relative; padding:50px"><div class="spinner-2"></div></td>
+                  <td style="position: relative; padding:50px"><div class="spinner-2"></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
         </main>
       </div>
     </div>
 
-    <script src="js/controllerCategory.js"></script>
+    <script src="js/category.view.js"></script>
   </body>
 </html>
