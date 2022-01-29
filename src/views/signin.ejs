@@ -14,15 +14,21 @@
     <link rel="shortcut icon" type="image/png" href="img/logofinalx48.png" />
     <link rel="stylesheet" href="css/hl/default.min.css" />
     <link rel="stylesheet" href="css/hl/atom-one-dark.css" />
+    <style>
+      .login-form{
+        max-width: 400px;
+        margin: 0 auto;
+      }
+    </style>
   </head>
   <body>
     <%- include('partials/header') %>
 
     <div class="container contenido">
-      <h1>Login</h1>
       <div class="main">
         <main class="w-100">
-          <div>
+          <div class="login-form">
+            <h1 class="text-center">Login</h1>
             <div class="form-control mb-20">
               <label for="">Username:</label>
               <input type="text" name="username" id="username" />
@@ -35,6 +41,7 @@
               <a href="#" class="btn verde w-100 text-center text-blanco" id="validarFormulario">Sign In</a>
               <a href="#" class="btn btn-spinner spinner-verde verde w-100 d-none" id="validandoFormulario"><div class="spinner-2"></div></a>              
             </div>
+            <div class="alert roja d-none" id="alerta"></div>
           </div>
         </main>
       </div>
@@ -44,6 +51,6 @@
       <div class="titulo">Titulo del mensaje</div>
       <section>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima vitae unde nesciunt officiis ea sit iure expedita commodi explicabo necessitatibus rerum beatae tenetur facilis nemo, optio aliquid. Iure voluptatum et eligendi consequuntur officia placeat ullam veniam natus! Quasi vero iusto vel pariatur, possimus reprehenderit earum eum perferendis inventore soluta nesciunt harum voluptate nihil quos nemo voluptatibus necessitatibus ea magnam a nobis impedit adipisci? Facere dolores deserunt velit suscipit accusantium unde ipsam voluptate enim nihil ut beatae officia id eveniet dicta amet eius aut, obcaecati consequuntur. Error in culpa et aspernatur at ut recusandae, laudantium eveniet eaque nisi animi iusto blanditiis.</section>
     </div>
-    <script src="js/signin.js"></script>
+    <script src="js/signin.view.js"></script>
   </body>
 </html>

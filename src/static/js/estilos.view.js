@@ -16,3 +16,16 @@ $$h2.forEach(($h2, index) => {
   }</a>`;
   $h2.setAttribute("id", `h2-${index + 1}`);
 });
+
+/*  CERRAR ALERTAS */
+/* estilos.view.js */
+(() => {
+  const $$closeAlert = document.querySelectorAll(".alert>.close");
+  $$closeAlert.forEach(($closeAlert) => {
+    $closeAlert.addEventListener("click", (e) => {
+      e.preventDefault();
+      $closeAlert.parentElement.classList.add("d-none");
+    });
+  });
+  console.log($$closeAlert);
+})();

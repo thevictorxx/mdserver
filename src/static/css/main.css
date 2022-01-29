@@ -745,7 +745,7 @@ a.btn.lavanda:active {
   position: relative;
 }
 
-.alert.red{
+.alert.roja{
   color: var(--color-rojo-dark);
   border: 1px thin var(--color-rojo-dark);
   background: var(--color-rojo-light);
@@ -773,7 +773,7 @@ a.btn.lavanda:active {
   position: absolute;
   font-size: 1.5rem;
   top: 5px;
-  right: 5px;
+  right: 8px;
   cursor: pointer;
 }
 
