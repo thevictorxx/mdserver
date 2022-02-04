@@ -12,7 +12,7 @@
   --color-amarillo: #ffe08a;
   --color-verde: #198754;
   --color-rojo: #f14668;
-  --color-gris: #b3b9c5; /*--main-text-color == --color-gris*/
+  --color-gris: #b3b9c5;
   --color-azul: #3e8ed0;
   --color-lavanda: #9b6dff;
   --color-lila: #3b49df;
@@ -186,19 +186,23 @@ header {
   z-index: 2;
 }
 
-header nav ul {
-  direction: rtl;
-}
-
 header nav ul li {
-  display: inline;
+  display: inline-flex;
 }
 
 header nav ul li a {
+  display: flex;
+  flex-shrink: 2;
+  flex-direction: row;
+  justify-content: center;
+  box-sizing: border-box;
   background: var(--main-bg-color);
-  padding: 10px 20px;
   color: #ffffff;
   font-size: 19px;
+}
+
+header nav ul li a:hover{
+  border-bottom: none;
 }
 
 code {
