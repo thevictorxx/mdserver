@@ -1,6 +1,7 @@
 const fs = require("fs");
 const fm = require("front-matter");
 const path = require("path");
+const decodeToken = require("../utils/decodeToken");
 
 const test = (req, res) => {
   const data = fs.readdirSync(
@@ -24,6 +25,8 @@ const test = (req, res) => {
 };
 
 const index = (req, res) => {
+  const { access_token } = req.cookies;
+  const tokenInfo = decodeToken(access_token);
   const data = fs.readdirSync(
     path.join(__dirname, "..", "docs-md"),
     function (err, archivos) {
@@ -58,11 +61,14 @@ const index = (req, res) => {
     title: "Pagina Principal",
     condition: true,
     archivos: nuevosElementos,
+    credenciales: tokenInfo,
   });
 };
 
 const estilos = (req, res) => {
-  res.render("estilos");
+  const { access_token } = req.cookies;
+  const tokenInfo = decodeToken(access_token);
+  res.render("estilos", { credenciales: tokenInfo });
 };
 
 module.exports = {

@@ -20,14 +20,17 @@
       <h1>Contenidos</h1>
       <div class="main">
         <main class="w-100">
+          <p><%= credenciales.isLogged %></p>
           <% archivos.forEach(archivo=> { %>
           <div class="card">
             <a href="/md/<%= archivo.path %>" target="_blank" class="external-link">
               <i class="fa fa-external-link"></i>
             </a>
-            <a href="/edit/<%= archivo.path %>" class="btn-edit">
-              <i class="fa fa-edit"></i>
-            </a>
+            <% if (credenciales.access === 1) { %>
+              <a href="/edit/<%= archivo.path %>" class="btn-edit">
+                <i class="fa fa-edit"></i>
+              </a>
+            <% } %>
             <div class="card-title">
               <a href="/md/<%= archivo.path %>"><%= archivo.titulo %></a>
             </div>

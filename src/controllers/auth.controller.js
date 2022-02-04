@@ -5,13 +5,18 @@ const {
   getAccountByUsername,
   createAccount,
 } = require("../database/Account");
+const decodeToken = require("../utils/decodeToken");
 
 const signin = (req, res) => {
-  res.render("signin");
+  const { access_token } = req.cookies;
+  const tokenInfo = decodeToken(access_token);
+  res.render("signin", { credenciales: tokenInfo });
 };
 
 const signup = (req, res) => {
-  res.render("signup");
+  const { access_token } = req.cookies;
+  const tokenInfo = decodeToken(access_token);
+  res.render("signup", { credenciales: tokenInfo });
 };
 
 const signinController = async (req, res) => {

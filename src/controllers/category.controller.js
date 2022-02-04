@@ -3,9 +3,12 @@ const {
   getCategory,
   removeCategory,
 } = require("../database/Category");
+const decodeToken = require("../utils/decodeToken");
 
 const category = (req, res) => {
-  res.render("category");
+  const { access_token } = req.cookies;
+  const tokenInfo = decodeToken(access_token);
+  res.render("category", { credenciales: tokenInfo });
 };
 
 const postCategory = async (req, res) => {

@@ -7,29 +7,28 @@
       </div>
       <nav>
         <ul>
-          <% if (false) {%>
+          <% if (credenciales.isLogged) {%>
           <li>
-            <a href="add" class="icon-nav-link">
-              <i class="fa fa-user-circle"></i>
-            </a>
+            <a href="add" class="icon-nav-link"><i class="fa fa-user-circle"></i></a>
           </li>
           <li>
-            <a href="category" class="icon-nav-link">
-              <i class="fa fa-bookmark"></i>
-            </a>
+            <a href="category" class="icon-nav-link"><i class="fa fa-bookmark"></i></a>
           </li>
           <li>
             <a href="add" class="icon-nav-link"><i class="fa fa-plus"></i></a>
+          </li>
+          <li>
+            <a href="#" class="icon-nav-link"><i class="fa fa-power-off"></i></a>
           </li>
           <% } %>
           <li>
             <a href="/" class="icon-nav-link"><i class="fa fa-home"></i></a>
           </li>
-          <li>
-            <a href="/signin" class="icon-nav-link">
-              <i class="fa fa-sign-in"></i>
-            </a>
-          </li>
+          <% if (!credenciales.isLogged) { %>
+            <li>
+              <a href="/signin" class="icon-nav-link"><i class="fa fa-sign-in"></i></a>
+            </li>
+          <% } %>
         </ul>
       </nav>
     </div>

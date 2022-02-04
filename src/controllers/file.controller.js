@@ -5,9 +5,12 @@ const path = require("path");
 const checkDuplicateFile = require("../utils/checkDuplicateFile.js");
 const createMdFile = require("../utils/createMdFile.js");
 const updateMdFile = require("../utils/updateMdFile.js");
+const decodeToken = require("../utils/decodeToken.js");
 
 const add = (req, res) => {
-  res.render("add");
+  const { access_token } = req.cookies;
+  const tokenInfo = decodeToken(access_token);
+  res.render("add", { credenciales: tokenInfo });
 };
 
 const addPost = (req, res) => {
@@ -53,6 +56,8 @@ const addPost = (req, res) => {
 };
 
 const edit = (req, res) => {
+  const { access_token } = req.cookies;
+  const tokenInfo = decodeToken(access_token);
   const { pathFile } = req.params;
   let archivo = false;
   let titulo = "";
@@ -87,6 +92,7 @@ const edit = (req, res) => {
     titulo: titulo,
     descripcion: descripcion,
     contenido: contenido,
+    credenciales: tokenInfo,
   });
 };
 
