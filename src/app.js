@@ -15,7 +15,7 @@ app.use(cookieParser());
 
 // Helmet js
 // app.use(helmet.contentSecurityPolicy());
-app.use(helmet.crossOriginEmbedderPolicy());
+// app.use(helmet.crossOriginEmbedderPolicy());
 app.use(helmet.crossOriginOpenerPolicy());
 app.use(helmet.crossOriginResourcePolicy());
 app.use(helmet.dnsPrefetchControl());
