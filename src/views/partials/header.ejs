@@ -7,28 +7,6 @@
       </div>
       <nav>
         <ul>
-          <% if (credenciales.isLogged) {%>
-          <li>
-            <a href="add" class="icon-nav-link">
-              <i class="fa fa-user-circle"></i>
-            </a>
-          </li>
-          <li>
-            <a href="category" class="icon-nav-link">
-              <i class="fa fa-bookmark"></i>
-            </a>
-          </li>
-          <li>
-            <a href="add" class="icon-nav-link">
-              <i class="fa fa-plus"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#" id="cerrarSession" class="icon-nav-link">
-              <i class="fa fa-power-off"></i>
-            </a>
-          </li>
-          <% } %>
           <li>
             <a href="/" class="icon-nav-link">
               <i class="fa fa-home"></i>
@@ -40,6 +18,28 @@
                 <i class="fa fa-user"></i>
               </a>
             </li>
+          <% } %>
+          <% if (credenciales.isLogged) {%>
+          <li aria-label="Categorías" data-balloon-pos="down">
+            <a href="category" class="icon-nav-link">
+              <i class="fa fa-bookmark"></i>
+            </a>
+          </li>
+          <li aria-label="Nuevo Articulo" data-balloon-pos="down">
+            <a href="add" class="icon-nav-link">
+              <i class="fa fa-plus"></i>
+            </a>
+          </li>
+          <li aria-label="Cerrar Sesión" data-balloon-pos="down">
+            <a href="#" id="cerrarSession" class="icon-nav-link">
+              <i class="fa fa-power-off"></i>
+            </a>
+          </li>
+          <li>
+            <a href="add" class="icon-nav-link">
+              <i class="fa fa-user-circle"></i>
+            </a>
+          </li>
           <% } %>
         </ul>
       </nav>
