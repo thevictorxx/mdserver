@@ -6,11 +6,13 @@ const checkDuplicateFile = require("../utils/checkDuplicateFile.js");
 const createMdFile = require("../utils/createMdFile.js");
 const updateMdFile = require("../utils/updateMdFile.js");
 const decodeToken = require("../utils/decodeToken.js");
+const { getCategory } = require("../database/Category.js");
 
-const add = (req, res) => {
+const add = async (req, res) => {
   const { access_token } = req.cookies;
   const tokenInfo = decodeToken(access_token);
-  res.render("add", { credenciales: tokenInfo });
+  const categorias = await getCategory();
+  res.render("add", { credenciales: tokenInfo, categorias });
 };
 
 const addPost = (req, res) => {
