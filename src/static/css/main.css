@@ -203,6 +203,61 @@ header nav ul li a {
 
 header nav ul li a:hover{
   border-bottom: none;
+  background: #29303a;
+}
+header nav ul li a.active{
+  background: #29303a;
+}
+
+/* The container <div> - necesario para posicionar el contenido desplegable */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  min-width: max-content;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content hr{
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-bottom: 2px solid #414147d3;
+}
+
+.dropdown-content a>i{
+  margin-right: 10px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #FFFFFF;
+  padding: 10px 12px;
+  text-decoration: none;
+  display: block;
+  background: #29303a;
+  text-align: end;
+  font-size: 1rem;
+  border:none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #161b22;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display: block;
 }
 
 code {

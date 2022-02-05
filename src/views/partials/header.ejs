@@ -20,25 +20,21 @@
             </li>
           <% } %>
           <% if (credenciales.isLogged) {%>
-          <li aria-label="Categorías" data-balloon-pos="down">
-            <a href="category" class="icon-nav-link">
-              <i class="fa fa-bookmark"></i>
-            </a>
-          </li>
-          <li aria-label="Nuevo Articulo" data-balloon-pos="down">
-            <a href="add" class="icon-nav-link">
-              <i class="fa fa-plus"></i>
-            </a>
-          </li>
-          <li aria-label="Cerrar Sesión" data-balloon-pos="down">
-            <a href="#" id="cerrarSession" class="icon-nav-link">
-              <i class="fa fa-power-off"></i>
-            </a>
-          </li>
           <li>
-            <a href="add" class="icon-nav-link">
-              <i class="fa fa-user-circle"></i>
-            </a>
+            <div class="dropdown">
+              <a href="#"class="icon-nav-link dropbtn">
+                <i class="fa fa-user-circle"></i>
+              </a>
+              <div class="dropdown-content">
+                <% if (credenciales.access === 1) {%>
+                <a href="add"><i class="fa fa-plus"></i> Nuevo Documento</a>
+                <a href="estilos"><i class="fa fa-paperclip"></i> Estilos</a>
+                <a href="category"><i class="fa fa-bookmark"></i> Categorías</a>
+                <hr>
+                <% } %>
+                <a href="#" id="cerrarSession"><i class="fa fa-power-off"></i> Cerrar sesión</a>
+              </div>
+            </div> 
           </li>
           <% } %>
         </ul>
