@@ -358,7 +358,8 @@ input[type="number"],
 input[type="time"],
 input[type="search"],
 input[type="tel"],
-input[type="date"] {
+input[type="date"],
+select {
   height: 43px;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
@@ -375,7 +376,8 @@ input[type="number"]:focus,
 input[type="time"]:focus,
 input[type="search"]:focus,
 input[type="tel"]:focus,
-input[type="date"]:focus {
+input[type="date"]:focus,
+select:focus {
   outline: 0;
   border: var(--border-size-input) solid var(--border-color-input-focus);
   box-shadow: var(--box-shadow-input) var(--border-color-input-focus);
@@ -671,6 +673,10 @@ a.btn.lavanda:active {
   padding: 20px !important;
 }
 
+.pr-20{
+  padding-right: 20px !important;
+}
+
 /* TAMAÑOS */
 .w-50 {
   width: 50%;
@@ -696,12 +702,21 @@ a.btn.lavanda:active {
 
 .form-control label{
   font-size: 1.1rem;
-  margin-bottom:5px;
+  line-height: 25px;
 }
 
 .form-control input{
   width: 100%;
 }
+
+.form-control select{
+  width: 100%;
+}
+
+.form-control textarea{
+  width: 100%;
+}
+
 .form-control small {
   margin-top:5px;
   display: block;

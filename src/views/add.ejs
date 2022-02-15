@@ -18,25 +18,14 @@
       section div {
         width: 100%;
       }
-      section div:first-child {
-        padding-right: 20px;
-      }
-      section div input,
       section div textarea {
-        width: 100%;
         margin-bottom: 20px;
         padding: 5px;
         box-sizing: border-box;
       }
-      label {
-        display: block;
-      }
       textarea {
         height: 300px;
         resize: none;
-      }
-      section div:first-child {
-        border-radius: 3px;
       }
 
       .container-preview {
@@ -81,13 +70,45 @@
       <h1>Nuevo Documento</h1>
       <div class="">
         <section>
-          <div>
-            <label class="d-block" for="titulo">Titulo</label>
-            <input type="text" id="titulo" />
-            <label class="d-block" for="descripcion">Descripcion</label>
-            <input type="text" id="descripcion" />
-            <label for="contenido">Contenido</label>
-            <textarea id="contenido"></textarea>
+          <div class="pr-20">
+            <div class="form-control mb-20">
+              <label for="titulo">Titulo</label>
+              <input type="text" id="titulo" />
+            </div>            
+
+            <div class="form-control mb-20">
+              <label for="descripcion">Descripcion</label>
+              <input type="text" id="descripcion" />
+            </div>
+            
+            <div class="form-control mb-20">
+              <label for="categoria">Categoria:</label>
+              <select name="categoria" id="categoria">
+                <% categorias.forEach(function(categoria){ %>
+                  <option value="<%= categoria.id %>"><%= categoria.category %></option>
+                <% }); %>
+              </select>
+            </div>
+
+            <div class="form-control mb-20">
+              <label for="contenido">Contenido</label>
+              <textarea id="contenido"></textarea>
+            </div>
+            
+            <div class="contenedor-mensajes">
+              <div class="alert roja mb-10" id="mensaje-incorrecto">
+                <i class="close">&times;</i>
+                <div>
+                  Mensaje
+                </div>
+              </div>
+              <div class="alert verde mb-10" id="mensaje-correcto">
+                <i class="close">&times;</i>
+                <div>
+                  Mensaje
+                </div>
+              </div>
+            </div>
             <a
               href="#"
               id="crearDocumento"
