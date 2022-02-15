@@ -12,6 +12,7 @@ const add = async (req, res) => {
   const { access_token } = req.cookies;
   const tokenInfo = decodeToken(access_token);
   const categorias = await getCategory();
+  console.log(categorias);
   res.render("add", { credenciales: tokenInfo, categorias });
 };
 

@@ -22,7 +22,9 @@ const insertCategory = async (nombre, img) => {
 
 const getCategory = async () => {
   const connection = await mysql.createConnection(configDB);
-  const [rows] = await connection.query("SELECT * FROM category");
+  const [rows] = await connection.query(
+    "SELECT * FROM category ORDER BY category"
+  );
   await connection.end();
   return rows;
 };
