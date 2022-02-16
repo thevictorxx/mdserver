@@ -3,6 +3,10 @@ const preview = document.getElementById("preview");
 const titulo = document.getElementById("titulo");
 const descripcion = document.getElementById("descripcion");
 const btnCrearDocumento = document.getElementById("crearDocumento");
+const categoria = document.getElementById("categoria");
+
+const $mensaje = document.getElementById("mensaje-correcto");
+const $mensajeError = document.getElementById("mensaje-incorrecto");
 
 contenido.addEventListener("keyup", () => {
   preview.innerHTML = marked.parse(contenido.value);
@@ -11,9 +15,6 @@ contenido.addEventListener("keyup", () => {
 
 btnCrearDocumento.addEventListener("click", (e) => {
   e.preventDefault();
-  // console.log("Titulo", titulo.value);
-  // console.log("Descripcion", descripcion.value);
-  // console.log("Contenido", contenido.value);
 
   fetch("/add", {
     method: "POST",
@@ -25,28 +26,39 @@ btnCrearDocumento.addEventListener("click", (e) => {
       titulo: titulo.value,
       descripcion: descripcion.value,
       contenido: contenido.value,
+      categoria: categoria.value,
     }),
   })
     .then((response) => response.json())
     .then((response) => {
       if (response.codigo === 0) {
-        alert("Creado Correctamente!");
+        addMensaje("Creado Correctamente!");
         titulo.value = "";
         descripcion.value = "";
         contenido.value = "";
       }
 
       if (response.codigo === 1) {
-        alert("Debes completar todos los campos.");
+        addMensajeError("Debes completar todos los campos.");
       }
 
       if (response.codigo === 2) {
-        alert("Ya existe un archivo con ese nombre, intenta otro.");
+        addMensajeError("Ya existe un archivo con ese nombre, intenta otro.");
       }
 
       if (response.codigo === 3) {
-        alert("Error en el servidor, intentelo más tarde.");
+        addMensajeError("Error en el servidor, intentelo más tarde.");
       }
     })
     .catch((err) => console.log(err));
 });
+
+function addMensaje(text) {
+  $mensaje.getElementsByTagName("div")[0].innerHTML = text;
+  $mensaje.classList.remove("d-none");
+}
+
+function addMensajeError(text) {
+  $mensajeError.getElementsByTagName("div")[0].innerHTML = text;
+  $mensajeError.classList.remove("d-none");
+}

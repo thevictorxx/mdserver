@@ -34,9 +34,9 @@
               </p>
             </div>
             <div class="card-footer">
-              <div><i class="fa fa-file"></i> 22-08-2021</div>
-              <div><i class="fa fa-calendar"></i> 22-08-2021</div>
-              <div><i class="fa fa-cubes"></i> Categoria</div>
+              <div aria-label="Creación" data-balloon-pos="down"><i class="fa fa-file"></i> 22-08-2021</div>
+              <div aria-label="Actualizado" data-balloon-pos="down"><i class="fa fa-calendar"></i> 22-08-2021</div>
+              <% if (archivo.categoria) { %><div><img src="img/category/<%= archivo.categoriaUrl %>"> <%= archivo.categoria %></div><% } %>
             </div>
           </div>
 

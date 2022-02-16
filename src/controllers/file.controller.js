@@ -25,7 +25,7 @@ const addPost = (req, res) => {
   3 -> ERROR DESCONOCIDO
   4 -> EL ARCHIVO NO EXISTE
   */
-  const { titulo, descripcion, contenido } = req.body;
+  const { titulo, descripcion, contenido, categoria } = req.body;
 
   if (
     titulo.trim() === "" ||
@@ -46,7 +46,7 @@ const addPost = (req, res) => {
     return false;
   }
 
-  if (createMdFile(titulo, descripcion, contenido)) {
+  if (createMdFile(titulo, descripcion, contenido, categoria)) {
     res.json({
       codigo: 0,
     });

@@ -54,6 +54,8 @@ const index = (req, res) => {
       ? datosArchivo.attributes.descripcion
       : "";
     nuevoObjeto.path = element;
+    nuevoObjeto.categoria = datosArchivo.attributes.categoria;
+    nuevoObjeto.categoriaUrl = datosArchivo.attributes.categoriaUrl;
     return nuevoObjeto;
   });
 

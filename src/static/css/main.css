@@ -383,6 +383,10 @@ select:focus {
   box-shadow: var(--box-shadow-input) var(--border-color-input-focus);
 }
 
+input:disabled{
+  color: var(--color-gris);
+}
+
 textarea {
   margin-right: 10px;
   font-family: "Roboto", sans-serif;

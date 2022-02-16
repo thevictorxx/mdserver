@@ -35,6 +35,7 @@ const getCategoryById = async (id) => {
     id,
   ]);
   await connection.end();
+  console.log(rows);
   return rows;
 };
 
@@ -67,4 +68,5 @@ module.exports = {
   insertCategory,
   getCategory,
   removeCategory,
+  getCategoryById,
 };
