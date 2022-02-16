@@ -49,7 +49,7 @@ function cargarCategorias() {
           tablaCategorias.insertRow(
             -1
           ).innerHTML = `<td id="c-${element.id}">${element.category}</td>
-        <td><img src="img/category/${element.img}" width="100" /></td>
+        <td><img src="img/category/${element.img}" width="50" /></td>
         <td><button class="btn-eliminar-categoria" id="${element.id}" aria-label="Eliminar" data-balloon-pos="up"><i class="fa fa-trash"></i></button></td>`;
         });
 
