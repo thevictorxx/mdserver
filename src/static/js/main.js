@@ -24,7 +24,6 @@ if ($cerrarSessionNav) {
 // DROPDOWN MENU
 const $$dropdown = document.querySelectorAll(".dropdown");
 $$dropdown.forEach(($dropdown) => {
-  console.log($dropdown.firstChild.nextSibling);
   $dropdown.firstChild.nextSibling.addEventListener("click", function (e) {
     e.preventDefault();
     this.classList.toggle("active");
