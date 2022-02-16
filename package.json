@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon src/index.js",
     "start": "node src/index.js",
-    "pm2": "pm2 start src/index.js --watch --name servidor-md"
+    "pm2": "pm2 start process.json"
   },
   "keywords": [],
   "author": "",

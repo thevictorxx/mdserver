@@ -1,7 +1,7 @@
 {
   "script": "src/index.js",
   "watch": true,
-  "ignore_watch" : ["src/static/img/category", "src/docs-md", "node_modules"],
+  "ignore_watch" : ["src/static/img/category", "src/docs-md"],
   "watch_options": {
     "followSymlinks": false
   },
