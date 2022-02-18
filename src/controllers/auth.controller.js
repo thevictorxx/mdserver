@@ -85,9 +85,15 @@ const signupController = async (req, res) => {
   res.status(201).json({ username, name, lastname, mail });
 };
 
+const logout = (req, res) => {
+  res.clearCookie("access_token");
+  res.redirect("/");
+};
+
 module.exports = {
   signin,
   signup,
   signinController,
   signupController,
+  logout,
 };
