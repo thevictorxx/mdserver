@@ -5,7 +5,8 @@ CREATE TABLE account(
     lastname VARCHAR(50) NOT NULL,
     pass text NOT NULL,
     mail VARCHAR(50) NULL,
-    access int NOT NULL
+    access int NOT NULL,
+    imgProfile VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE file(
@@ -16,7 +17,7 @@ CREATE TABLE file(
     created_at DATETIME NOT NULL,
     modified_at DATETIME NOT NULL,
     autor INT NOT NULL,
-    category INT(50) NOT NULL
+    category INT NOT NULL
 );
 
 CREATE TABLE category(
@@ -48,7 +49,9 @@ REFERENCES access (id);
 INSERT INTO access (access) VALUES
 ("Administrador"),
 ("Moderador"),
-("Usuario");
+("Usuario"),
+("Lector"),
+("Bloqueado");
 
 INSERT INTO account(username, name, lastname, pass, mail, access) VALUES
 ("admin", "Victor", "Guzman", "$2a$10$UsX16q.NcJwfbN2GcDln0uAkyJDvfUSspXtCr9F8kob4GyDL9JuRq", "thevictorxx@gmail.com", 1);
