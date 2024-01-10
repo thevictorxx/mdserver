@@ -32,7 +32,7 @@ app.use(helmet.xssFilter())
 
 // Configuracion express-md
 const mdRouter = expressMd({
-  dir: __dirname + '/docs-md',
+  dir: path.join(__dirname, 'docs-md'),
   url: '/md',
   watch: true
 })
