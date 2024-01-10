@@ -14,11 +14,11 @@
 // })
 
 (() => {
-  const $$closeWindows = document.querySelectorAll(".cerrar");
+  const $$closeWindows = document.querySelectorAll('.cerrar')
   $$closeWindows.forEach((element) => {
-    element.addEventListener("click", (e) => {
-      e.preventDefault();
-      element.parentElement.classList.add("d-none");
-    });
-  });
-})();
+    element.addEventListener('click', (e) => {
+      e.preventDefault()
+      element.parentElement.classList.add('d-none')
+    })
+  })
+})()

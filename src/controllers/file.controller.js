@@ -1,20 +1,20 @@
-const fs = require("fs");
-const fm = require("front-matter");
-const path = require("path");
+const fs = require('fs')
+const fm = require('front-matter')
+const path = require('path')
 
-const checkDuplicateFile = require("../utils/checkDuplicateFile.js");
-const createMdFile = require("../utils/createMdFile.js");
-const updateMdFile = require("../utils/updateMdFile.js");
-const decodeToken = require("../utils/decodeToken.js");
-const { getCategory } = require("../database/Category.js");
+const checkDuplicateFile = require('../utils/checkDuplicateFile.js')
+const createMdFile = require('../utils/createMdFile.js')
+const updateMdFile = require('../utils/updateMdFile.js')
+const decodeToken = require('../utils/decodeToken.js')
+const { getCategory } = require('../database/Category.js')
 
 const add = async (req, res) => {
-  const { access_token } = req.cookies;
-  const tokenInfo = decodeToken(access_token);
-  const categorias = await getCategory();
-  console.log(categorias);
-  res.render("add", { credenciales: tokenInfo, categorias });
-};
+  const { access_token } = req.cookies
+  const tokenInfo = decodeToken(access_token)
+  const categorias = await getCategory()
+  console.log(categorias)
+  res.render('add', { credenciales: tokenInfo, categorias })
+}
 
 const addPost = (req, res) => {
   /*
@@ -25,117 +25,117 @@ const addPost = (req, res) => {
   3 -> ERROR DESCONOCIDO
   4 -> EL ARCHIVO NO EXISTE
   */
-  const { titulo, descripcion, contenido, categoria } = req.body;
+  const { titulo, descripcion, contenido, categoria } = req.body
 
   if (
-    titulo.trim() === "" ||
-    descripcion.trim() === "" ||
-    contenido === "" ||
-    contenido === " "
+    titulo.trim() === '' ||
+    descripcion.trim() === '' ||
+    contenido === '' ||
+    contenido === ' '
   ) {
     res.json({
-      codigo: 1,
-    });
-    return false;
+      codigo: 1
+    })
+    return false
   }
 
   if (checkDuplicateFile(titulo)) {
     res.json({
-      codigo: 2,
-    });
-    return false;
+      codigo: 2
+    })
+    return false
   }
 
   if (createMdFile(titulo, descripcion, contenido, categoria)) {
     res.json({
-      codigo: 0,
-    });
-    return false;
+      codigo: 0
+    })
+    return false
   }
 
   res.json({
-    codigo: 3,
-  });
-};
+    codigo: 3
+  })
+}
 
 const edit = (req, res) => {
-  const { access_token } = req.cookies;
-  const tokenInfo = decodeToken(access_token);
-  const { pathFile } = req.params;
-  let archivo = false;
-  let titulo = "";
-  let descripcion = "";
-  let contenido = "";
+  const { access_token } = req.cookies
+  const tokenInfo = decodeToken(access_token)
+  const { pathFile } = req.params
+  let archivo = false
+  let titulo = ''
+  let descripcion = ''
+  let contenido = ''
 
   // verificar la extencion del parametro
-  const ruta = /^.*\.(md|MD)$/gim.test(pathFile) ? pathFile : `${pathFile}.md`;
+  const ruta = /^.*\.(md|MD)$/gim.test(pathFile) ? pathFile : `${pathFile}.md`
 
-  //verificar existencia del archivo y leerlo
+  // verificar existencia del archivo y leerlo
 
   try {
     archivo = fs.readFileSync(
-      path.join(__dirname, "..", "docs-md", ruta),
-      "utf-8"
-    );
+      path.join(__dirname, '..', 'docs-md', ruta),
+      'utf-8'
+    )
   } catch (e) {
-    archivo = false;
+    archivo = false
   }
 
-  //extraer dator con frontt-mater
+  // extraer dator con frontt-mater
   if (archivo) {
-    const { attributes, body } = fm(archivo);
-    titulo = attributes?.titulo;
-    descripcion = attributes?.descripcion;
-    contenido = body;
+    const { attributes, body } = fm(archivo)
+    titulo = attributes?.titulo
+    descripcion = attributes?.descripcion
+    contenido = body
   } else {
-    res.redirect("/");
+    res.redirect('/')
   }
 
-  res.render("edit", {
-    titulo: titulo,
-    descripcion: descripcion,
-    contenido: contenido,
-    credenciales: tokenInfo,
-  });
-};
+  res.render('edit', {
+    titulo,
+    descripcion,
+    contenido,
+    credenciales: tokenInfo
+  })
+}
 
 const editPost = (req, res) => {
-  const { titulo, descripcion, contenido } = req.body;
-  const { pathFile } = req.params;
+  const { titulo, descripcion, contenido } = req.body
+  const { pathFile } = req.params
   if (
-    titulo.trim() === "" ||
-    descripcion.trim() === "" ||
-    contenido === "" ||
-    contenido === " "
+    titulo.trim() === '' ||
+    descripcion.trim() === '' ||
+    contenido === '' ||
+    contenido === ' '
   ) {
     res.json({
-      codigo: 1,
-    });
-    return false;
+      codigo: 1
+    })
+    return false
   }
   if (checkDuplicateFile(pathFile.slice(0, -3))) {
     if (updateMdFile(titulo, descripcion, contenido, pathFile)) {
       res.json({
-        codigo: 0,
-      });
-      return false;
+        codigo: 0
+      })
+      return false
     } else {
       res.json({
-        codigo: 3,
-      });
-      return false;
+        codigo: 3
+      })
+      return false
     }
   } else {
     res.json({
-      codigo: 2,
-    });
-    return false;
+      codigo: 2
+    })
+    return false
   }
-};
+}
 
 module.exports = {
   add,
   edit,
   addPost,
-  editPost,
-};
+  editPost
+}

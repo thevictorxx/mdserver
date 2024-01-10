@@ -9,8 +9,8 @@ module.exports = function (fecha, formato) {
     dd: fecha.getDate(),
     mm: fecha.getMonth() + 1,
     yy: fecha.getFullYear().toString().slice(-2),
-    yyyy: fecha.getFullYear(),
-  };
+    yyyy: fecha.getFullYear()
+  }
 
-  return formato.replace(/dd|mm|yy|yyy/gi, (matched) => map[matched]);
-};
+  return formato.replace(/dd|mm|yy|yyy/gi, (matched) => map[matched])
+}

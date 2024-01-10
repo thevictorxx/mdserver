@@ -1,7 +1,7 @@
-const fs = require("fs");
-const path = require("path");
-const { getCategoryById } = require("../database/Category.js");
-const formatoFecha = require("../utils/formatoFecha.js");
+const fs = require('fs')
+const path = require('path')
+const { getCategoryById } = require('../database/Category.js')
+const formatoFecha = require('../utils/formatoFecha.js')
 
 /**
  *
@@ -11,9 +11,9 @@ const formatoFecha = require("../utils/formatoFecha.js");
  * @returns {boolean} Boolean true si se guardo correctamente
  */
 module.exports = async (titulo, descripcion, contenido, categoria) => {
-  const hoy = formatoFecha(new Date(), "dd/mm/yy");
-  const urlImg = await getCategoryById(categoria);
-  let estado = true;
+  const hoy = formatoFecha(new Date(), 'dd/mm/yy')
+  const urlImg = await getCategoryById(categoria)
+  let estado = true
   const documento = `---
 titulo: "${titulo}"
 descripcion: "${descripcion}"
@@ -22,16 +22,16 @@ categoriaUrl: "${urlImg[0]?.img}"
 creacion: "${hoy}"
 ---
    
-${contenido}`;
+${contenido}`
   fs.appendFileSync(
-    path.join(__dirname, "..", "docs-md", `${titulo}.md`),
+    path.join(__dirname, '..', 'docs-md', `${titulo}.md`),
     documento,
     function (err) {
       if (err) {
-        estado = false;
-        throw err;
+        estado = false
+        throw err
       }
     }
-  );
-  return estado;
-};
+  )
+  return estado
+}

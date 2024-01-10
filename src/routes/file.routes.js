@@ -1,22 +1,22 @@
-const { Router } = require("express");
+const { Router } = require('express')
 
 const {
   add,
   edit,
   addPost,
-  editPost,
-} = require("../controllers/file.controller");
+  editPost
+} = require('../controllers/file.controller')
 
-const adminAccess = require("../middleware/adminAccess.middleware");
+const adminAccess = require('../middleware/adminAccess.middleware')
 
-const router = Router();
+const router = Router()
 
-router.get("/edit/:pathFile", adminAccess, edit);
+router.get('/edit/:pathFile', adminAccess, edit)
 
-router.post("/edit/:pathFile", adminAccess, editPost);
+router.post('/edit/:pathFile', adminAccess, editPost)
 
-router.get("/add", adminAccess, add);
+router.get('/add', adminAccess, add)
 
-router.post("/add", addPost);
+router.post('/add', addPost)
 
-module.exports = router;
+module.exports = router
