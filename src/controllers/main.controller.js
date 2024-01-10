@@ -8,7 +8,7 @@ const test = (req, res) => {
     path.join(__dirname, '..', 'docs-md'),
     function (err, archivos) {
       if (err) {
-        onError(err)
+        console.error(err)
         return
       }
       return archivos
@@ -31,7 +31,7 @@ const index = (req, res) => {
     path.join(__dirname, '..', 'docs-md'),
     function (err, archivos) {
       if (err) {
-        onError(err)
+        console.error(err)
         return
       }
       return archivos
@@ -46,7 +46,7 @@ const index = (req, res) => {
       path.join(__dirname, '..', 'docs-md', element),
       'utf-8'
     )
-    datosArchivo = fm(leerArchivo)
+    const datosArchivo = fm(leerArchivo)
     nuevoObjeto.titulo = datosArchivo.attributes.titulo
       ? datosArchivo.attributes.titulo
       : element
