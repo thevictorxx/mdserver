@@ -18,12 +18,12 @@ const createAccount = async (username, name, lastname, pass, mail) => {
     )
 
     estado = true
+    await connection.end()
   } catch (error) {
     console.log(error)
     estado = false
   }
 
-  await connection.end()
   return estado
 }
 
