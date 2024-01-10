@@ -1,12 +1,13 @@
 CREATE TABLE account(
     id INT PRIMARY KEY AUTO_INCREMENT,
+    uuid VARCHAR(50) DEFAULT UUID(),
     username VARCHAR(50) NOT NULL,
     name VARCHAR(50) NOT NULL,
     lastname VARCHAR(50) NOT NULL,
     pass text NOT NULL,
     mail VARCHAR(50) NULL,
     access int NOT NULL,
-    imgProfile VARCHAR(100) NOT NULL
+    imgProfile VARCHAR(100) DEFAULT "default.png"
 );
 
 CREATE TABLE file(
@@ -54,4 +55,4 @@ INSERT INTO access (access) VALUES
 ("Bloqueado");
 
 INSERT INTO account(username, name, lastname, pass, mail, access) VALUES
-("admin", "Victor", "Guzman", "$2a$10$UsX16q.NcJwfbN2GcDln0uAkyJDvfUSspXtCr9F8kob4GyDL9JuRq", "thevictorxx@gmail.com", 1);
+("admin", "Victor", "Guzman", "$2a$10$UsX16q.NcJwfbN2GcDln0uAkyJDvfUSspXtCr9F8kob4GyDL9JuRq", "admin@vitoco.dev", 1);
