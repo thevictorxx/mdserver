@@ -12,7 +12,7 @@ module.exports = (testFile) => {
     path.join(__dirname, '..', 'docs-md'),
     function (err, archivos) {
       if (err) {
-        onError(err)
+        console.error(err)
         return
       }
       console.log(archivos)
