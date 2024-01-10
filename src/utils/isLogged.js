@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken')
 
 const isLogged = (tokenCookie) => {
-  const data = {
+  let data = {
     isLogged: false,
     userId: 0,
     access: 0
